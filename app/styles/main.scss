@@ -1,10 +1,18 @@
 @import "compass_twitter_bootstrap";
+//@import "reset";
+
+/* box-sizing reset.  Make padding make sense! */
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
 
 #Resume {
 	padding-top: 10px;
 
 	#BasicInfo {
-		min-height: 400px;
-		background-color: black;
+		overflow: hidden;
+		img { border-radius: 6px; }
 	}
 }
