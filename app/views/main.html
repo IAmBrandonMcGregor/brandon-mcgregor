@@ -1,10 +1,20 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
-</div>
-<h2>Pizza is good.</h2>
+<section id="TitleWrapper" class="row hero-unit">
+	<h1 class="span12">Brandon McGregor</h1>
+	<em><h6 class="span12">Professional web developer.  Amateur game developer.</h6></em>
+</section>
+<section id="Professional">
+	<ul class="row">
+		<h4 class="span12">Professional</h4>
+		<li ng-repeat="project in professional" class="project span4" ng-click="ShowProjectDetails(project)">
+			<a>{{project.name}}</a>
+		</li>
+	</ul>
+</section>
+<section id="Amateur">
+	<ul class="row">
+		<h4 class="span12">Experiments</h4>
+		<li ng-repeat="project in amateur" class="project span4" ng-click="ShowProjectDetails(project)">
+			<a>{{project.name}}</a>
+		</li>
+	</ul>
+</section>
