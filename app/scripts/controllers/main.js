@@ -5,9 +5,18 @@ angular.module('brandonMcgregorApp')
 
 	// A collection of professional (aka paid) projects.
 	$scope.professional = [
-		{ name: 'Salespad.net' },
-		{ name: '1023software.com' },
-		{ name: 'Salespad Cloud' }
+		{ 
+			name: 'Salespad.net',
+			thumbnail: '../assets/salespad.png' 
+		},
+		{ 
+			name: '1023software.com',
+			thumbnail: '../assets/1023software.png' 
+		},
+		{ 
+			name: 'Salespad Cloud',
+			thumbnail: '../assets/cloud.png'
+		 }
 	];
 
 	// A collection of amateur projects.

@@ -1,3 +1,4 @@
+
 <section id="TitleWrapper" class="row hero-unit">
 	<h1 class="span12">Brandon McGregor</h1>
 	<em><h6 class="span12">Professional web developer.  Amateur game developer.</h6></em>
@@ -5,14 +6,16 @@
 <section id="Professional">
 	<ul class="row">
 		<h4 class="span12">Professional</h4>
-		<li ng-repeat="project in professional" class="project span4" ng-click="ShowProjectDetails(project)">
+		<li ng-repeat="project in professional" class="project span4 asdf" 
+			ng-click="ShowProjectDetails(project)"
+			style="background-image: url('{{project.thumbnail}}')">
 			<a>{{project.name}}</a>
 		</li>
 	</ul>
 </section>
 <section id="Amateur">
 	<ul class="row">
-		<h4 class="span12">Experiments</h4>
+		<h4 class="span12">Just For Fun</h4>
 		<li ng-repeat="project in amateur" class="project span4" ng-click="ShowProjectDetails(project)">
 			<a>{{project.name}}</a>
 		</li>

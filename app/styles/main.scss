@@ -10,6 +10,15 @@
 	list-style: none;
 }
 
+html {
+	background-image: url("../assets/grey.png");
+	background-repeat: repeat;
+
+	body {
+		background: transparent;
+	}
+}
+
 #Resume {
 	padding-top: 10px;
 
@@ -32,7 +41,11 @@
 		border-radius: 6px;
 		border: 1px solid $color_5;
 		background: $color_2;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50%;
 		cursor: pointer;
+		overflow: hidden;
 		a {
 			position: relative;
 			display: block;
@@ -44,6 +57,7 @@
 			bottom: -140px;
 			text-decoration: none;
 			cursor: pointer;
+			box-shadow: -3px 1px 15px -3px black;
 		}
 	}
 }
