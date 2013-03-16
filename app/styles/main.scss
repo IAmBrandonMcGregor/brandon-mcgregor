@@ -1,5 +1,7 @@
 @import "compass_twitter_bootstrap";
 @import "kuler/waterlime";
+
+$color-main : #050505;
 //@import "reset";
 
 /* box-sizing reset.  Make padding make sense! */
@@ -11,12 +13,44 @@
 }
 
 html {
-	background-image: url("../assets/grey.png");
+	//background-image: url("../assets/grey.png");
+	background-color: $color-main;
 	background-repeat: repeat;
 
 	body {
 		background: transparent;
 	}
+}
+
+#Navigation {
+	width: 100%;
+	height: 40px;
+	background-color: transparentize(lighten($color-main, .8), .3);
+	border-bottom: 1px solid transparentize(white, .98);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+	.name {
+		line-height: 40px;
+		text-align: left;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		//padding: 0;
+	}
+}
+
+#Widescreen {
+	width: 100%;
+	height: 300px;
+	margin-top: 200px;
+	margin-bottom: 80px;
+	background-color: $color-main;
+	background-image: url("../images/milky_way.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	box-shadow: inset 0px 0px 200px 40px $color-main;
 }
 
 #Resume {
@@ -39,7 +73,7 @@ html {
 	.project {
 		height: 200px;
 		border-radius: 6px;
-		border: 1px solid $color_5;
+		//border: 1px solid $color_5;
 		background: $color_2;
 		background-repeat: no-repeat;
 		background-size: cover;

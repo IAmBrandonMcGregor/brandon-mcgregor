@@ -7,15 +7,15 @@ angular.module('brandonMcgregorApp')
 	$scope.professional = [
 		{ 
 			name: 'Salespad.net',
-			thumbnail: '../assets/salespad.png' 
+			thumbnail: '../images/salespad.png' 
 		},
 		{ 
 			name: '1023software.com',
-			thumbnail: '../assets/1023software.png' 
+			thumbnail: '../images/1023software.png' 
 		},
 		{ 
 			name: 'Salespad Cloud',
-			thumbnail: '../assets/cloud.png'
+			thumbnail: '../images/cloud.png'
 		 }
 	];
 
