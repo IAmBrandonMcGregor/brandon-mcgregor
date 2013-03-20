@@ -3,6 +3,7 @@
 
 //$color-main : #050505;
 $color-main : black;
+$color-text: white;
 //@import "reset";
 
 /* box-sizing reset.  Make padding make sense! */
@@ -31,6 +32,7 @@ html {
 	position: fixed;
 	top: 0px;
 	left: 0px;
+	color: $color-text;
 
 	.name {
 		line-height: 40px;
@@ -72,20 +74,21 @@ html {
 #Professional, #Amateur {
 	margin-top: 20px;
 	margin-bottom: 80px;
+	color: $color-text;	
+	
 	.project {
 		height: 200px;
 		border-radius: 6px;
-		//border: 1px solid $color_5;
 		background: $color_2;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: 50%;
 		cursor: pointer;
 		overflow: hidden;
+
 		a {
 			position: relative;
 			display: block;
-			color: $color_3;
 			background-color: $color_1;
 			text-align: right;
 			float: right;
