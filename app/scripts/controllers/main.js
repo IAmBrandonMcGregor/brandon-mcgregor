@@ -1,31 +1,27 @@
 'use strict';
 
 angular.module('brandonMcgregorApp')
-.controller('MainCtrl', ['$scope', function ($scope) {
+.controller('MainCtrl', ['$scope', 'ScreenSpySrv', function ($scope, ScreenSpySrv) {
 
-	// A collection of professional (aka paid) projects.
-	$scope.professional = [
-		{ 
-			name: 'Salespad.net',
-			thumbnail: '../images/salespad.png' 
-		},
-		{ 
-			name: '1023software.com',
-			thumbnail: '../images/1023software.png' 
-		},
-		{ 
-			name: 'Salespad Cloud',
-			thumbnail: '../images/cloud.png'
-		 }
-	];
-
-	// A collection of amateur projects.
-	$scope.amateur = [
-		{ name: 'Web Touch Controller' }
-	];
-
-
-	$scope.ShowProjectDetails = function (project) {
-		console.log("This should open the project '" + project.name + "'.");
+	$scope.Init = function() {
+		// Manually call ScreenSpySrv once and then watch for updates.
+		$scope.main_height_binding = ScreenSpySrv.GetSectionHeights().main;
+		window.addEventListener('resize', function () {
+			$scope.main_height_binding = ScreenSpySrv.GetSectionHeights().main;
+			$scope.$apply();
+		}.bind($scope, ScreenSpySrv), false);
 	};
+
+	$scope.GetMainViewHeight = function () {
+		var mNavH = document.getElementById('MainNavigation').offsetHeight,
+			sNavH = document.getElementById('SubNavigation').offsetHeight,
+			winH = window.innerHeight;
+
+		return (winH - mNavH - sNavH) + 'px';
+	};
+
+
+
+	$scope.Init();
+
 }]);

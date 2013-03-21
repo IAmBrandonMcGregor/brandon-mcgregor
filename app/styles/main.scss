@@ -24,12 +24,11 @@ html {
 	}
 }
 
-#Navigation {
+#MainNavigation {
 	width: 100%;
 	height: 40px;
 	background-color: transparentize(lighten($color-main, .8), .3);
 	border-bottom: 1px solid transparentize(white, .98);
-	position: fixed;
 	top: 0px;
 	left: 0px;
 	color: $color-text;
@@ -45,58 +44,26 @@ html {
 
 #Widescreen {
 	width: 100%;
-	height: 300px;
-	margin-top: 00px;
-	margin-bottom: 80px;
 	background-color: $color-main;
 	background-image: url("../images/milky_way.jpg");
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	background-size: cover;
+	background-size: 100%;
 	box-shadow: inset 0px -40px 50px 0px $color-main,
 				inset 0px 40px 50px 0px $color-main;
-}
 
-#Resume {
-	padding-top: 10px;
-
-	#BasicInfo {
-		overflow: hidden;
-		img { border-radius: 6px; }
+	overflow: auto;
+	.innerts {
+		display: block;
+		width: 100%;
+		float: left;
+		height: 2000px;
 	}
 }
-#TitleWrapper, #TitleWrapper.hero-unit {
-	background-color: transparent;
-	h6 {
-		padding-left: 5px;
-	}
-}
-#Professional, #Amateur {
-	margin-top: 20px;
-	margin-bottom: 80px;
-	color: $color-text;	
-	
-	.project {
-		height: 200px;
-		border-radius: 6px;
-		background: $color_2;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: 50%;
-		cursor: pointer;
-		overflow: hidden;
 
-		a {
-			position: relative;
-			display: block;
-			background-color: $color_1;
-			text-align: right;
-			float: right;
-			padding: 5px 20px;
-			bottom: -140px;
-			text-decoration: none;
-			cursor: pointer;
-			box-shadow: -3px 1px 15px -3px black;
-		}
-	}
+#SubNavigation {
+	height: 40px;
+	border-top: 1px solid white;
+	width: 100%;
 }
+

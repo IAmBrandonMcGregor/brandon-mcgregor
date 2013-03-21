@@ -4,9 +4,9 @@
 	<em><h6 class="span12">Professional web developer.  Amateur game developer.</h6></em>
 </section> -->
 
-<nav id="Navigation">
-	<div class="container">
-		<div class="row">
+<nav id="MainNavigation">
+	<div class="container-fluid">
+		<div class="row-fluid">
 			<h5 class="name span3">Brandon McGregor</h5>
 			<section class="span7 offset2">
 				<!-- <span style="line-height: 40px;">Add scrollspy here.</span> -->
@@ -15,27 +15,16 @@
 	</div>
 </nav>
 
-<section id="Widescreen">
-	
+<section id="Widescreen" ng-style="{height: (main_height_binding + 'px')}">
+	<div class="innerts">
+	</div>
 </section>
 
-<div class="container">
-	<section id="Professional">
-		<ul class="row">
-			<h4 class="span12">Professional</h4>
-			<li ng-repeat="project in professional" class="project span4 asdf" 
-				ng-click="ShowProjectDetails(project)"
-				style="background-image: url('{{project.thumbnail}}')">
-				<a>{{project.name}}</a>
-			</li>
-		</ul>
-	</section>
-	<section id="Amateur">
-		<ul class="row">
-			<h4 class="span12">Just For Fun</h4>
-			<li ng-repeat="project in amateur" class="project span4" ng-click="ShowProjectDetails(project)">
-				<a>{{project.name}}</a>
-			</li>
-		</ul>
-	</section>
-</div>
+<nav id="SubNavigation">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<!-- Put stuff here. -->
+		</div>
+	</div>
+</nav>
+
