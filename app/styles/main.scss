@@ -1,9 +1,12 @@
 @import "compass_twitter_bootstrap";
 @import "kuler/waterlime";
+@import "my_mixins";
 
 //$color-main : #050505;
 $color-main : black;
 $color-text: white;
+$color-bg: #3ACC53;
+$color-cream: #F6FFF5;
 //@import "reset";
 
 /* box-sizing reset.  Make padding make sense! */
@@ -16,54 +19,151 @@ $color-text: white;
 
 html {
 	//background-image: url("../assets/grey.png");
-	background-color: $color-main;
+	background-color: lighten($color-main, .5);
 	background-repeat: repeat;
 
 	body {
 		background: transparent;
+		overflow: hidden;
+	}
+
+	.band {
+		overflow: hidden;
 	}
 }
 
 #MainNavigation {
 	width: 100%;
 	height: 40px;
-	background-color: transparentize(lighten($color-main, .8), .3);
-	border-bottom: 1px solid transparentize(white, .98);
+	position: absolute;
 	top: 0px;
 	left: 0px;
-	color: $color-text;
+	z-index: +999;
+	overflow: hidden;
+	border-bottom: 1px solid transparentize($color-cream, .8);
 
 	.name {
-		line-height: 40px;
+		margin: 0;
+		margin-top: 2px;
+		padding: 0;
 		text-align: left;
-		margin-top: 0px;
-		margin-bottom: 0px;
-		//padding: 0;
+		color: $color-cream;
+
+		font-size: 14px;
+		vertical-align: middle;
+		line-height: 40px;
+
+		//&.large {
+		//	font-size: 68px;
+		//	margin-top: 11px;
+		//	@include text-inset($color-bg);
+		//}
+	}
+
+	.links {
+		display: block;
+		float: right;
+		overflow: hidden;
+		margin-right: 10px;
+
+		li {
+			float: left;
+			margin-top: 6px;
+			margin-left: 10px;
+			margin-right: 10px;
+			padding-top: 3px;
+			border-top: 3px solid transparent;
+
+			a, span {
+				color: $color-cream;
+				//border-top: 3px solid transparent;
+				&:hover { text-decoration: none; }
+			}
+
+			&.current{
+				border-top: 3px solid darken($color-bg, 35);
+			}
+		}
 	}
 }
 
 #Widescreen {
 	width: 100%;
-	background-color: $color-main;
-	background-image: url("../images/milky_way.jpg");
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 100%;
-	box-shadow: inset 0px -40px 50px 0px $color-main,
-				inset 0px 40px 50px 0px $color-main;
-
+	box-shadow: inset 0px 0px 10px -2px $color-main;
+	background-color: $color-bg;
 	overflow: auto;
+	opacity: 0;
+	&.visible { opacity: 1; }
+	@include transition(opacity, .15s, linear);
+
 	.innerts {
 		display: block;
 		width: 100%;
+		min-height: 1200px;
 		float: left;
-		height: 2000px;
 	}
 }
 
 #SubNavigation {
+	position: absolute;
+	bottom: 0px;
 	height: 40px;
-	border-top: 1px solid white;
+	border-top: 1px solid transparentize(white, .9);
 	width: 100%;
 }
 
+#AboutMe {
+	position: relative;
+	width: 100%;
+	padding-left: 20px;
+
+	.my_name {
+		font-size: 68px;
+		line-height: normal;
+		@include text-inset($color-bg);
+	}
+	.quick_description {
+		padding-top: 90px;
+		@include text-inset($color-bg);
+	}
+
+	ul.categories_of_interests {
+		margin: 50px 0px 0px 0px;
+		padding: 0;
+		display: block;
+		overflow: auto;
+		width: 100%;
+		min-height: 200px;
+
+		li {
+			width: 25%;
+			float: left;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			text-align: center;
+
+			figure {
+				display: block;
+				margin: 0 auto;
+				background: $color-cream;
+				box-shadow: inset 0px 0px 50px -17px black;
+				border-radius: 150px / 200px;
+				height: 200px;
+				width: 150px;
+			}
+			&:hover figure {
+				background: #009958;
+			}
+			figcaption {
+
+			}
+		}
+	}
+
+	.self_rant {
+		color: darken($color-bg, 35);
+		position: absolute;
+		bottom: 60px;
+	}
+}

@@ -30,8 +30,10 @@ angular.module('brandonMcgregorApp')
         this.CaptureScreenSize();
         // DOM traverse to read the set heights.
         this.sections = {
-            main_nav: document.getElementById("MainNavigation").offsetHeight,
-            sub_nav: document.getElementById("SubNavigation").offsetHeight
+            // main_nav: document.getElementById("MainNavigation").offsetHeight,
+            // sub_nav: document.getElementById("SubNavigation").offsetHeight
+            main_nav: 0,
+            sub_nav: 0
         };
         // Calculate and set the main area height.
         this.sections.main = this.GetReducedWindowHeight(
