@@ -2,17 +2,25 @@
 
 angular.module('brandonMcgregorApp')
 .controller('MainCtrl', ['$scope', 'WindowSrvc', function ($scope, WindowSrvc) {
-	$scope.container_styling = { width: '200px' };
+	$scope.container_styling = { width: WindowSrvc.main_page.width + 'px' };
+	$scope.widthListener = function () {
+		console.log("blahblahblah");
+	};
 
-	// Once the page has loaded, call the Window Service to read the screen's dimensions.
-	(function ($, WindowSrvc) {
+	//$scope.$watch('WindowSrvc.main_page', $scope.widthListener);
 
-		// Read the screen dimensions once the screen has rendered.
-		$(window).ready(function () {
-			WindowSrvc.CaptureScreenDimensions();
-			$scope.container_styling.width = WindowSrvc.main_page.width + 'px';
-		}.bind(WindowSrvc));
-
-	})(jQuery, WindowSrvc);
+	// $scope.$watch(
+	// 	function () { 
+	// 		return WindowSrvc.IsUpdated(); 
+	// 	},
+	// 	function () {
+	// 		$scope.widthListener();
+	// 	});
 	
+	$scope.$on("ScreenResize", function () {
+		console.log("I heard the broadcast.");
+		$scope.container_styling.width = WindowSrvc.main_page.width + 'px';
+		$scope.$apply();
+	});
+
 }]);
