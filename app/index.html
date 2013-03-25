@@ -22,8 +22,11 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="band" ng-view></div>
+    <div class="application_wrapper">
+        <nav class="ng-include main_navigation" src="'views/main_navigation.html'"></nav>
+        <section class="ng-view main_page"></section>
+    </div>
+
 
     <script src="components/angular/angular.js"></script>
     <script src="components/jquery/jquery.js"></script>
@@ -37,7 +40,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/resume.js"></script>
-    <script src="scripts/services/ScreenSpySrv.js"></script>
+    <script src="scripts/services/WindowSrvc.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics. -->
@@ -46,6 +49,17 @@
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+
+
+
+    <script>
+        (function ($) {
+            $(window).ready(function () {
+                $('.main_page').width($(window).width() - $('.main_navigation').outerWidth());
+            });
+        })(jQuery);
     </script>
   </body>
 </html>
