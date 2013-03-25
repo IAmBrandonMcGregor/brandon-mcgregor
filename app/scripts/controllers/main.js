@@ -2,7 +2,9 @@
 
 angular.module('brandonMcgregorApp')
 .controller('MainCtrl', ['$scope', 'WindowSrvc', function ($scope, WindowSrvc) {
-	$scope.container_styling = { width: WindowSrvc.main_page.width + 'px' };
+	$scope.container_styling = { 
+		width: WindowSrvc.main_page.width + 'px',
+		height: WindowSrvc.screen.height + 'px' };
 	$scope.widthListener = function () {
 		console.log("blahblahblah");
 	};
@@ -18,9 +20,19 @@ angular.module('brandonMcgregorApp')
 	// 	});
 	
 	$scope.$on("ScreenResize", function () {
-		console.log("I heard the broadcast.");
+		//console.log("I heard the broadcast.");
 		$scope.container_styling.width = WindowSrvc.main_page.width + 'px';
-		$scope.$apply();
+		//$scope.$apply();
 	});
+
+
+
+
+
+
+	$scope.panels = [
+		'Works',
+		'About Me'
+	];
 
 }]);
