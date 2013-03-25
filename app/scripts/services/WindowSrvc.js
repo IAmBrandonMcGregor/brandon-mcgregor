@@ -6,17 +6,9 @@ angular.module('brandonMcgregorApp')
     var WindowSrvc = {
         screen: null,
         main_page: null,
-        main_navigation: null
+        main_navigation: null,
+        scroll_position: null
     };
-
-
-    WindowSrvc.IsUpdated = function () {
-        console.log("WindowSrvc.IsUpdated()...");
-        return WindowSrvc.screen.width;
-    };
-
-
-
 
     WindowSrvc.CaptureScreenDimensions = function () {
 
@@ -24,19 +16,15 @@ angular.module('brandonMcgregorApp')
             // capture the sceen dimensions.
             this.screen = {
                 width: jQuery('.application_wrapper').innerWidth(),
-                height: jQuery('.application_wrapper').innerHeight()
-            };
+                height: jQuery('.application_wrapper').innerHeight() };
             // capture the main navigation width.
-            this.main_navigation = { width: jQuery('.main_navigation').outerWidth() };
+            this.main_navigation = { 
+                width: jQuery('.main_navigation').outerWidth(),
+                height: this.screen.height };
             // calculate the main page width.
-            this.main_page = { width: (this.screen.width - this.main_navigation.width) };
-
-            // start a cooldown clock.
-            this.CoolDown = true;
-            $timeout(function () {
-                this.CoolDown = false;
-            }.bind(this), 100);
-
+            this.main_page = { 
+                width: (this.screen.width - this.main_navigation.width),
+                height: this.screen.height };
         }
         catch (ex) {
             // catch any errors (lack of jQuery, etc)
@@ -51,17 +39,22 @@ angular.module('brandonMcgregorApp')
 
     // Set a listener to fire up this service on a callback loop.
     jQuery(window).ready(function () {
+        // Take an initial capture of the screen's dimensions.
         WindowSrvc.CaptureScreenDimensions();
+
+        // Add an event listener for RESIZE events.
         jQuery(window).resize(function (event) {
-
-            if (WindowSrvc.CoolDown === true)
-                return;
-
             WindowSrvc.CaptureScreenDimensions();
             $rootScope.$broadcast('ScreenResize', WindowSrvc);
-            //console.log("The WindowSrvc just listened to 'resize'.");
 
         }.bind(WindowSrvc));
+
+        // Add an event listener for SCROLL events.
+        jQuery(window).scroll(function () {
+            WindowSrvc.scroll_position = jQuery(window).scrollTop();
+            $rootScope.$broadcast('Scroll', WindowSrvc);
+        });
+
     }.bind(WindowSrvc));
 
     // Return the service.

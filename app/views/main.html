@@ -1,9 +1,9 @@
 
 
-<div class="container-fluid" ng-style="container_styling" ng-repeat="panel in panels">
-	<div class="row-fluid">
+<div class="panel" ng-style="container_styling" ng-repeat="panel in panels">
+	<div class="ng-include" src="panel.view_file"></div>
+	<!-- <div class="row-fluid">
 		<section id="About_Me" class="span12">
-			<!-- Awesome -->
 		</section>
-	</div>
+	</div> -->
 </div>

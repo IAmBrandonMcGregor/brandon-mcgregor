@@ -2,6 +2,9 @@
 @import "compass_twitter_bootstrap_responsive";
 @import "my_mixins";
 
+// Import specific sections.
+@import "sections/about_me";
+
 /* box-sizing reset.  Make padding make sense! */
 * { 
 	-moz-box-sizing: border-box; 
@@ -19,27 +22,35 @@ html, body {
 
 .application_wrapper {
 	height: 100%;
-	background-color: rgba(0, 0, 0, .2);
+	//background-color: rgba(0, 0, 0, .2);
 }
 
-.main_navigation {
-	display: block;
-	width: 100px;
-	height: 100%;
-	float: left;
-	border-left: 1px solid transparentize(black, .6);
-	border-right: 1px solid transparentize(black, .6);
-}
+//.main_navigation {
+//	display: block;
+//	width: 100px;
+//	height: 100%;
+//	float: left;
+//	border-left: 1px solid transparentize(black, .6);
+//	border-right: 1px solid transparentize(black, .6);
+//}
 
 .main_page {
 	float: left;
 	height: 100%;
-	padding-top: 20px;
-}
+	width: 100%;
+	overflow: auto;
 
+	.panel {
+		box-shadow: inset 0px 0px 30px -13px black;
+		overflow: hidden;
+		height: 100%;
 
-// PAGES!!
-#About_Me {
-	border: 1px solid black;
-	min-height: 100px;
+		.ng-include {
+			height: inherit;
+		}
+
+		.provide-nav-buffer {
+			padding-top: 30px;
+		}
+	}
 }

@@ -2,27 +2,20 @@
 
 angular.module('brandonMcgregorApp')
 .controller('MainCtrl', ['$scope', 'WindowSrvc', function ($scope, WindowSrvc) {
+	// Set the initial height of each panel.
 	$scope.container_styling = { 
-		width: WindowSrvc.main_page.width + 'px',
-		height: WindowSrvc.screen.height + 'px' };
-	$scope.widthListener = function () {
-		console.log("blahblahblah");
-	};
+		//width: WindowSrvc.main_page.width + 'px',
+		height: WindowSrvc.main_page.height + 'px' };
 
-	//$scope.$watch('WindowSrvc.main_page', $scope.widthListener);
-
-	// $scope.$watch(
-	// 	function () { 
-	// 		return WindowSrvc.IsUpdated(); 
-	// 	},
-	// 	function () {
-	// 		$scope.widthListener();
-	// 	});
-	
+	// Listen for broadcasts from the WindowSrvc...
+	//		... RESIZE
 	$scope.$on("ScreenResize", function () {
-		//console.log("I heard the broadcast.");
-		$scope.container_styling.width = WindowSrvc.main_page.width + 'px';
-		//$scope.$apply();
+		$scope.container_styling.height = WindowSrvc.main_page.height + 'px';
+		$scope.$apply();
+	});
+	//		... SCROLL
+	$scope.$on("Scroll", function () {
+		console.log("Scrolled!");
 	});
 
 
@@ -31,8 +24,14 @@ angular.module('brandonMcgregorApp')
 
 
 	$scope.panels = [
-		'Works',
-		'About Me'
+		{
+			name : "works",
+			view_file : "views/works.html"
+		},
+		{
+			name : "about me",
+			view_file : "views/about_me.html"
+		}
 	];
 
 }]);
