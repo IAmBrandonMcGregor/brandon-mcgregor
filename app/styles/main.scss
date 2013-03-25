@@ -4,6 +4,7 @@
 
 // Import specific sections.
 @import "sections/about_me";
+@import "sections/works.scss";
 
 /* box-sizing reset.  Make padding make sense! */
 * { 
@@ -41,7 +42,7 @@ html, body {
 	overflow: auto;
 
 	.panel {
-		box-shadow: inset 0px 0px 30px -13px black;
+		//box-shadow: inset 0px 0px 30px -13px black;
 		overflow: hidden;
 		height: 100%;
 

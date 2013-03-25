@@ -1,0 +1,35 @@
+
+
+
+
+#Works {
+	height: 100%;
+
+	.project-view, .project-selection {
+		width: 100%;
+		float: left;
+		overflow: auto;
+	}
+
+	.project-view {
+		height: 85%;
+	}
+
+	.project-selection {
+		height: 15%;
+		border-top: 1px dashed black;
+
+		.project-list {
+			display: block;
+			margin: 0;
+			padding: 0;
+			overflow: auto;
+			list-style: none;
+		}
+
+		.project {
+			min-height:20px;
+			box-shadow: inset 0px 0px 0px 1px black;
+		}
+	}
+}
