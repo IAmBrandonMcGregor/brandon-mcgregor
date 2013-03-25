@@ -11,14 +11,10 @@
         </div>
     </section>
     <nav class="project-selection">
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <ul class="project-list">
-                    <li class="project span4"></li>
-                    <li class="project span4"></li>
-                    <li class="project span4"></li>
-                </ul>
-            </div>
-        </div>
+        <ul class="project-list">
+            <li class="project" ng-repeat="project in works" ng-style="project_style">
+                <figure class="icon"></figure>
+            </li>
+        </ul>
     </nav>
 </div>

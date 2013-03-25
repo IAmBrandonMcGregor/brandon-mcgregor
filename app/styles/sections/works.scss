@@ -1,8 +1,15 @@
 
 
+// Kuler - Charcoal SubLime
+$color_1 : #9C9B46;
+$color_2 : #424140;
+$color_3 : #B05D46;
+$color_4 : #B8733F;
+$color_5 : #B58940;
 
 
 #Works {
+	background: $color_1;
 	height: 100%;
 
 	.project-view, .project-selection {
@@ -13,23 +20,44 @@
 
 	.project-view {
 		height: 85%;
+
+
 	}
 
 	.project-selection {
 		height: 15%;
-		border-top: 1px dashed black;
+		//border-top: 1px dashed black;
 
 		.project-list {
 			display: block;
-			margin: 0;
+			margin: 0 auto;
 			padding: 0;
 			overflow: auto;
 			list-style: none;
+			width: 60%;
 		}
 
 		.project {
-			min-height:20px;
-			box-shadow: inset 0px 0px 0px 1px black;
+			min-height:60px;
+			float: left;
+
+			.icon {
+				height: 60px;
+				width: 60px;
+				margin: 0 auto;
+				background: $color_2;
+				//border: 1px solid black;
+			}
+
+			//figure {
+			//	display: block;
+			//	margin: 0 auto;
+			//	background: #F6FFF5;
+			//	box-shadow: inset 0px 0px 50px -17px black;
+			//	border-radius: 150px/200px;
+			//	height: 200px;
+			//	width: 150px;
+			//}
 		}
 	}
 }
