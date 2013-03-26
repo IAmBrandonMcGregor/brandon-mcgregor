@@ -5,7 +5,7 @@ angular.module('brandonMcgregorApp')
 	// Set the initial height of each panel.
 	$scope.container_styling = { 
 		//width: WindowSrvc.main_page.width + 'px',
-		height: WindowSrvc.main_page.height + 'px' };
+		height: ((WindowSrvc.main_page.height - 70) + 'px') };
 
 	// Listen for broadcasts from the WindowSrvc...
 	//		... RESIZE

@@ -3,6 +3,7 @@
 angular.module('brandonMcgregorApp')
 .controller('WorksCtrl', ['$scope', function ($scope) {
 	$scope.name = "Works";
+	$scope.project_idx = 0;
 
 	$scope.works = [
 		{
@@ -27,7 +28,13 @@ angular.module('brandonMcgregorApp')
 		}
 	];
 
-	
+
 
 	$scope.project_style = { width: ((100 / $scope.works.length) + "%") };
+
+
+	$scope.SelectProject = function (idx) {
+		$scope.project_idx = idx;
+	};
+
 }]);

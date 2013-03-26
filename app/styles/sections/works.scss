@@ -1,4 +1,5 @@
 
+@import "my_mixins";
 
 // Kuler - Charcoal SubLime
 $color_1 : #9C9B46;
@@ -12,18 +13,47 @@ $color_5 : #B58940;
 	background: $color_1;
 	height: 100%;
 
-	.project-view, .project-selection {
+	.project-view, .project-selection, .project-links {
 		width: 100%;
 		float: left;
 		overflow: auto;
 	}
 
+	// This holds detailed informatino about the project.
+	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 	.project-view {
-		height: 85%;
+		height: 70%;
+		padding-top: 20px;
 
+		.description {
+			.list-of-cool-things {
+				list-style-type: circle;
+				li {
+					list-style-type: circle;
+				}
+			}
+		}
 
+		.preview {
+			min-height: 200px;
+			max-height: 100%;
+		}
 	}
 
+
+
+	// This holds the links to project code & live viewing.
+	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	.project-links {
+		height: 15%;
+		background-color: $color_4;
+		box-shadow: 0px 0px 25px -15px black;
+	}
+
+
+
+	// This holds the links to other projects.
+	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 	.project-selection {
 		height: 15%;
 		//border-top: 1px dashed black;
@@ -44,9 +74,14 @@ $color_5 : #B58940;
 			.icon {
 				height: 60px;
 				width: 60px;
-				margin: 0 auto;
+				margin: 20px auto 0px;
 				background: $color_2;
-				//border: 1px solid black;
+				border: 2px solid $color_2;
+				@include transition(border-color, .15s, linear);
+
+				&.current {
+					border-color: white;
+				}
 			}
 
 			//figure {

@@ -1,9 +1,9 @@
 
 
-<div class="panel" ng-style="container_styling" ng-repeat="panel in panels">
-	<div class="ng-include" src="panel.view_file"></div>
-	<!-- <div class="row-fluid">
-		<section id="About_Me" class="span12">
-		</section>
-	</div> -->
+<div class="panel_wrapper">
+	<!-- This is a repeater for panels -->
+	<div class="panel" ng-style="container_styling" ng-repeat="panel in panels">
+		<div class="ng-include" src="panel.view_file"></div>
+	</div>
+	<!-- end of repeater -->
 </div>
