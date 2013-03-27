@@ -25,24 +25,24 @@ angular.module('brandonMcgregorApp')
 
 
     // Set a listener to fire up this service on a callback loop.
-    jQuery(window).ready(function () {
+    //jQuery(window).ready(function () {
         // Take an initial capture of the screen's dimensions.
-        WindowSrvc.CaptureScreenDimensions();
+        //WindowSrvc.CaptureScreenDimensions();
 
         // Add an event listener for RESIZE events.
-        jQuery(window).resize(function (event) {
-            WindowSrvc.CaptureScreenDimensions();
-            $rootScope.$broadcast('ScreenResize', WindowSrvc);
+        // jQuery(window).resize(function (event) {
+        //     WindowSrvc.CaptureScreenDimensions();
+        //     $rootScope.$broadcast('ScreenResize', WindowSrvc);
 
-        }.bind(WindowSrvc));
+        // }.bind(WindowSrvc));
 
         // Add an event listener for SCROLL events.
-        jQuery(window).scroll(function () {
-            WindowSrvc.scroll_position = jQuery(window).scrollTop();
-            $rootScope.$broadcast('Scroll', WindowSrvc);
-        });
+        // jQuery(window).scroll(function () {
+        //     WindowSrvc.scroll_position = jQuery(window).scrollTop();
+        //     $rootScope.$broadcast('Scroll', WindowSrvc);
+        // });
 
-    }.bind(WindowSrvc));
+    //}.bind(WindowSrvc));
 
     // Return the service.
     return WindowSrvc;

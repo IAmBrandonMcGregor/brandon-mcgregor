@@ -7,10 +7,6 @@ angular.module('brandonMcgregorApp', [])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/resume', {
-        templateUrl: 'views/resume.html',
-        controller: 'ResumeCtrl'
-      })
       .otherwise({
         redirectTo: '/'
       });
