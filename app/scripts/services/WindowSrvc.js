@@ -4,35 +4,22 @@ angular.module('brandonMcgregorApp')
 .factory('WindowSrvc', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
 
     var WindowSrvc = {
-        screen: null,
-        main_page: null,
-        main_navigation: null,
-        scroll_position: null
+        dimensions : {
+            screen : {
+                width : 0,
+                height : 0
+            },
+            header : {
+                width : 0,
+                height : 0
+            }
+        }
     };
 
     WindowSrvc.CaptureScreenDimensions = function () {
-
-        try {
-            // capture the sceen dimensions.
-            this.screen = {
-                width: jQuery('.application_wrapper').innerWidth(),
-                height: jQuery('.application_wrapper').innerHeight() };
-            // capture the main navigation width.
-            this.main_navigation = { 
-                width: jQuery('.main_navigation').outerWidth(),
-                height: this.screen.height };
-            // calculate the main page width.
-            this.main_page = { 
-                width: (this.screen.width - this.main_navigation.width),
-                height: this.screen.height };
-        }
-        catch (ex) {
-            // catch any errors (lack of jQuery, etc)
-            console.error(ex);
-            return false;
-        }
-
-        return true;
+        var jq_header = jQuery('#MainHeader');
+        this.dimensions.screen.width = jq_header.outerWidth();
+        this.dimensions.screen.height = jq_header.outerHeight();
     };
 
 
