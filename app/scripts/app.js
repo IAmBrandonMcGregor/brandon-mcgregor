@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('brandonMcgregorApp', [])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -11,4 +11,4 @@ angular.module('brandonMcgregorApp', [])
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);
