@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('brandonMcgregorApp')
-.controller('MainCtrl', ['$scope', 'WindowSrvc', function ($scope, WindowSrvc) {
+.controller('MainCtrl', ['$scope', '$location', '$rootScope', '$timeout', 'WindowSrvc', 
+function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 
 	$scope.Init = function () {
 		
@@ -12,6 +13,20 @@ angular.module('brandonMcgregorApp')
 			$scope.$apply();
 		});
 		
+		$rootScope.sections = [
+			{
+				name : 'Hello',
+				template_file : 'views/hello.html'
+			},
+			{
+				name : 'Portfolio',
+				template_file : 'views/portfolio.html'
+			},
+			{
+				name : 'Find Me',
+				template_file : 'views/find_me.html'
+			}
+		];
 	};
 
 	$scope.SetDynamicStyling = function () {
@@ -19,6 +34,18 @@ angular.module('brandonMcgregorApp')
 			height : ((WindowSrvc.dimensions.screen.height - WindowSrvc.dimensions.header.height) + 'px')
 		};
 	};
+
+	$scope.$on('$viewContentLoaded', function () {
+		$timeout(function () {
+			WindowSrvc.Init();
+			$scope.SetDynamicStyling();
+			WindowSrvc.GoTo({suppressAnimation : true});
+		}, 100);
+	});
+
+	$scope.$on('$routeUpdate', function () {
+		WindowSrvc.GoTo();
+	}, true);
 
 	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 	// ~ ~ ~ ~ ~  Post-Declaration Executions  ~ ~ ~ ~ ~ ~ 

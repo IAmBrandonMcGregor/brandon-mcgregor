@@ -1,23 +1,7 @@
 <section id="Page" ng-style="scrolling_area_dynamic_styling">
     <div class="inner">
-        <section id="Hello" class="navigable_section">
-        	<div class="container">
-        		<div class="row">
-        			<h1 class="span12">Hello.</h1>
-        			<h1 class="span12">My name is Brandon.</h1>
-        			<h1 class="span12">I am a programmer.</h1>
-        			<p class="span12 words">
-        				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in metus ac velit ornare vestibulum ac sed lacus. Phasellus interdum tristique diam at luctus. Quisque sem urna, sodales a convallis quis, suscipit a massa. Nulla facilisi. Fusce ultricies suscipit ligula, vitae sodales ligula consequat et. In faucibus tortor sit amet massa pharetra lacinia. Phasellus dapibus mollis facilisis. Praesent quis est et urna rhoncus scelerisque. Curabitur ultricies nisi facilisis tortor convallis et posuere purus euismod. Nam euismod, nisl vel rutrum feugiat, mauris purus consequat quam, et mattis mi lacus nec libero. Nullam semper augue non tortor tempor eget scelerisque ante blandit. Fusce tristique varius pharetra. Nulla consequat lobortis neque et euismod. 
-        			</p>
-        		</div>
-        	</div>
-        </section>
-        <section id="Portfolio" class="navigable_section">
-        	<div class="container">
-        		<div class="row">
-        			<h1 class="span12">Portfolio.</h1>
-    			</div>
-        	</div>
-        </section>
+        <div ng-repeat="section in sections">
+            <ng-include src="section.template_file"
+        </div>
     </div>
 </section>

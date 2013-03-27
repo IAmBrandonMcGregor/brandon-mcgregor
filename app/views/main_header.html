@@ -4,10 +4,10 @@
 			<h1 class="title span5">Brandon McGregor</h1>
 			<nav class="main_nav span6 offset1">
 				<ul>
-					<li ng-repeat="section in sections" 
-						ng-class="{ true : 'active', false : '' }[section == active_section]"
-						ng-click="Navigate(section)">
-						{{section}}
+					<li ng-repeat="(idx, section) in sections" 
+						ng-class="{ true : 'active', false : '' }[idx == active_section_idx]"
+						ng-click="Navigate(idx)">
+						{{section.name}}
 					</li>
 				</ul>
 			</nav>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('brandonMcgregorApp')
-.factory('WindowSrvc', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
+.factory('WindowSrvc', ['$rootScope', '$timeout', '$location', function ($rootScope, $timeout, $location) {
 
     var WindowSrvc = {
         dimensions : {
@@ -10,6 +10,10 @@ angular.module('brandonMcgregorApp')
                 height : 0
             },
             header : {
+                width : 0,
+                height : 0
+            },
+            navigable_section : {
                 width : 0,
                 height : 0
             }
@@ -26,14 +30,47 @@ angular.module('brandonMcgregorApp')
         var jq_header = jQuery('#MainHeader');
         this.dimensions.header.width = jq_header.outerWidth();
         this.dimensions.header.height = jq_header.outerHeight();
+
+        // Navigable Section(s).
+        var jq_navSec = jQuery('.navigable_section').first();
+        this.dimensions.navigable_section.width = jq_navSec.outerWidth();
+        this.dimensions.navigable_section.height = jq_navSec.outerHeight();
     };
 
+    WindowSrvc.GoTo = function (parameters) {
+        if (angular.isUndefined(parameters))
+            parameters = {};
 
+        // Capture the section from the URL.
+        var section = '',
+            idx = 0;
+        angular.forEach($location.search(), function (value, key) {
+            section = key.replace('-', ' ');
+        }.bind(section));
 
-    // Set a listener to fire up this service on a callback loop.
-    jQuery(window).ready(function () {
-        // Take an initial capture of the screen's dimensions.
-        WindowSrvc.CaptureScreenDimensions();
+        // Capture the index of the section.
+        for (var i=0, l=$rootScope.sections.length; i<l; i++) {
+            if ($rootScope.sections[i].name === section) {
+                idx = i;
+                $rootScope.active_section_idx = i;
+                break;
+            }
+        }
+
+        // Use jQuery to scroll to that section.
+        var jqSelector = ('#' + section.replace(' ', ''));
+        if (parameters.suppressAnimation !== true) {
+            jQuery('#Page').animate({
+                scrollTop: (idx * this.dimensions.navigable_section.height)
+            }, 800);
+        }
+        else {
+            jQuery('#Page').scrollTop(idx * this.dimensions.navigable_section.height);
+        }
+    };
+
+    WindowSrvc.Init = function () {
+        this.CaptureScreenDimensions();
 
         // Add an event listener for RESIZE events.
         jQuery(window).resize(function (event) {
@@ -47,8 +84,7 @@ angular.module('brandonMcgregorApp')
             WindowSrvc.scroll_position = jQuery(window).scrollTop();
             $rootScope.$broadcast('Scroll', WindowSrvc);
         });
-
-    }.bind(WindowSrvc));
+    };
 
     // Return the service.
     return WindowSrvc;

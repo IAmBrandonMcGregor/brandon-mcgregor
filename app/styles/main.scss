@@ -17,6 +17,7 @@ html, body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 
 	font-family: 'BebasNeueRegular';
 	letter-spacing: 1px;
@@ -49,37 +50,10 @@ html, body {
 		width: 70%;
 		height: 0px;
 		background: black;
+		border-radius: 100%;
 		box-shadow: 0px -55px 150px 30px #111;
 	}
 }
-
-
-
-#Hello { 
-	background-color: silver;
-
-	.words {
-		margin-bottom: 70px;
-		position: absolute;
-		bottom: 0px;
-	}
-}
-
-#Portfolio { 
-	background-color: green;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -103,3 +77,5 @@ html, body {
 
 // import the smaller sections.
 @import "main_header";
+@import "hello";
+@import "portfolio";
