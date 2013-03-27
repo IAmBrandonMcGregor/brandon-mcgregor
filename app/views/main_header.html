@@ -1,0 +1,16 @@
+<header id="MainHeader" ng-controller="MainHeaderCtrl">
+	<div class="container">
+		<div class="row">
+			<h1 class="title span5">Brandon McGregor</h1>
+			<nav class="main_nav span6 offset1">
+				<ul>
+					<li ng-repeat="section in sections" 
+						ng-class="{ true : 'active', false : '' }[section == active_section]"
+						ng-click="Navigate(section)">
+						{{section}}
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
