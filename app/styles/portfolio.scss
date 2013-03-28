@@ -5,7 +5,15 @@ $main_color: #98CB98;
 
 	background-color: $main_color;
 
+	.scroll-hide {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 600px;
+	}
 	.projects-wrapper {
+		position: absolute;
+		top: 0; left: 0;
 		width: 100%;
 		overflow: auto;
 	}
