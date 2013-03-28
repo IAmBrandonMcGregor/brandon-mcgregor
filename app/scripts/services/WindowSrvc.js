@@ -17,6 +17,16 @@ angular.module('brandonMcgregorApp')
                 width : 0,
                 height : 0
             }
+        },
+        positions : {
+            screen : {
+                x : 0,
+                y : 0
+            },
+            project_list : {
+                x : 0,
+                y : 0
+            }
         }
     };
 
@@ -42,7 +52,7 @@ angular.module('brandonMcgregorApp')
             parameters = {};
 
         // Capture the section from the URL.
-        var section = '',
+        var section = '', 
             idx = 0;
         angular.forEach($location.search(), function (value, key) {
             section = key.replace('-', ' ');
@@ -54,6 +64,9 @@ angular.module('brandonMcgregorApp')
                 idx = i;
                 $rootScope.active_section_idx = i;
                 break;
+            }
+            else {
+                $rootScope.active_section_idx = idx;
             }
         }
 
@@ -70,6 +83,7 @@ angular.module('brandonMcgregorApp')
     };
 
     WindowSrvc.Init = function () {
+        // Take an initial reading of the screen layout.
         this.CaptureScreenDimensions();
 
         // Add an event listener for RESIZE events.
@@ -81,8 +95,17 @@ angular.module('brandonMcgregorApp')
 
         // Add an event listener for SCROLL events.
         jQuery(window).scroll(function () {
-            WindowSrvc.scroll_position = jQuery(window).scrollTop();
+            WindowSrvc.positions.screen.x = jQuery(window).scrollLeft();
+            WindowSrvc.positions.screen.y = jQuery(window).scrollTop();
             $rootScope.$broadcast('Scroll', WindowSrvc);
+        });
+
+        // Add an event listener for the 'list-of-projects' position.
+        jQuery('.projects-wrapper').scroll(function () {
+            WindowSrvc.positions.project_list.x = jQuery(this).scrollLeft();
+            WindowSrvc.positions.project_list.y = jQuery(this).scrollTop();
+            // broadcast via Root Scope.
+            $rootScope.$broadcast('Project-Wrapper-Scroll');
         });
     };
 

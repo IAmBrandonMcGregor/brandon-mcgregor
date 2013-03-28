@@ -4,9 +4,42 @@
 			<h1 class="span12">Portfolio.</h1>
 		</div>
 	</div>
-	<!-- <div class="projects-wrapper">
-		<div class="list-of-projects">
-			<span ng-repeat="project in projects" class="project">{{project.name}}</span>
-		</div>
-	</div> -->
+	<div class="projects-wrapper">
+		<ul class="list-of-projects" style="width: {{ (projects.length * 800) + 'px;' }}">
+			<!-- Repeat Start - Project -->
+			<li ng-repeat="project in projects" class="project" 
+				style="background-image: url('{{project.background_image_url}}')">
+				<h1 class="name" ng-bind="project.name"></h1>
+				<div class="description" ng-class="{true:'open',false:''}[project.open]">
+					<p>{{project.description}}</p>
+					<section class="actions">
+						<div class="action"
+							 ng-click="ToggleProjectOpen(project)">
+							<span>details</span>
+							<svg>
+								<path class="details" d="M25.979,12.896 19.312,12.896 19.312,6.229 12.647,6.229 12.647,12.896 5.979,12.896 5.979,19.562 12.647,19.562 12.647,26.229 19.312,26.229 19.312,19.562 25.979,19.562z">
+							</svg>
+						</div>
+						<a class="action" 
+							 ng-class="{true:'disabled',false:''}[project.source_code_url == nul]"
+							 ng-href="{{GetSourceHref(project)}}">
+							<span>code</span>
+							<svg>
+								<path class="code" d="{{GetCodeSVG(project)}}">
+							</svg>
+						</a>
+						<a class="action"
+							ng-class="{true:'disabled',false:''}[project.live_url == null]"
+							ng-href="{{GetLiveHref(project)}}">
+							<span>view</span>
+							<svg>
+								<path class="view" d="M16,8.286C8.454,8.286,2.5,16,2.5,16s5.954,7.715,13.5,7.715c5.771,0,13.5-7.715,13.5-7.715S21.771,8.286,16,8.286zM16,20.807c-2.649,0-4.807-2.157-4.807-4.807s2.158-4.807,4.807-4.807s4.807,2.158,4.807,4.807S18.649,20.807,16,20.807zM16,13.194c-1.549,0-2.806,1.256-2.806,2.806c0,1.55,1.256,2.806,2.806,2.806c1.55,0,2.806-1.256,2.806-2.806C18.806,14.451,17.55,13.194,16,13.194z">
+							</svg>
+						</a>
+					</section>
+				</div>
+			</li>
+			<!-- Repeat End - Project -->
+		</ul>
+	</div>
 </section>
