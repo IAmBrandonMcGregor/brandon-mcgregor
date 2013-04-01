@@ -11,6 +11,7 @@ angular.module('brandonMcgregorApp')
 		{
 			name : 'Salespad Website',
 			description : 'A CMS (Kentico) based website for salespad.',
+			description_long : "While working in-house at SalesPad, I re-built Salespad's official website. I worked with a few page designs from their grpahic designer and collaborated on all the existing pages, providing feedback on page requirements, navigation, and user experience.  This website is and was being used for live customer support, so maintaining existing documentation URLs was a necessity.",
 			source_code_url : null,
 			live_url : 'http://www.salespad.net',
 			background_image_url : 'images/salespad.png',

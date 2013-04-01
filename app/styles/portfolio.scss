@@ -89,7 +89,7 @@ $main_color: #98CB98;
 							display: block;
 							float: left;
 							width: 100%;
-							margin: 5px 0 0 0;
+							margin: 8px 0 0 0;
 							padding: 0;
 							line-height: normal;
 						}
@@ -100,7 +100,7 @@ $main_color: #98CB98;
 
 							path {
 								fill: $main_color;
-								-webkit-transform: translate(19px, 1px);
+								-webkit-transform: translate(19px, -4px);
 							}
 						}
 
