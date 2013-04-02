@@ -48,6 +48,7 @@ $main_color: #98CB98;
 			}
 			.description {
 				position: absolute;
+				overflow: hidden;
 				bottom: 0px;
 				display: block;
 				width: 100%;
@@ -120,6 +121,15 @@ $main_color: #98CB98;
 							}
 						}
 					}
+				}
+
+				.description_long {
+					display: block;
+					overflow: auto;
+					width: 100%;
+					float: left;
+					white-space: normal;
+					padding-top: 49px;
 				}
 			}
 		}

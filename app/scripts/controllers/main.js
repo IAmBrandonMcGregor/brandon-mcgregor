@@ -21,11 +21,11 @@ function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 			{
 				name : 'Portfolio',
 				template_file : 'views/portfolio.html'
-			},
+			}/*,
 			{
 				name : 'Find Me',
 				template_file : 'views/find_me.html'
-			}
+			}*/
 		];
 	};
 
