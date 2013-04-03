@@ -116,20 +116,10 @@ module.exports = function (grunt) {
         imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: 'app/components',
-        relativeAssets: true,
-        raw: 'http_images_path = \'../images\'\nhttp_generated_images_path = \'../images\'\n'
+        importPath: '<%= yeoman.app %>/components',
+        relativeAssets: true
       },
-      // options: {
-      //   sassDir: '<%= yeoman.app %>/styles',
-      //   cssDir: '.tmp/styles',
-      //   imagesDir: '<%= yeoman.app %>/images',
-      //   javascriptsDir: '<%= yeoman.app %>/scripts',
-      //   //fontsDir: '<%= yeoman.app %>/styles/fonts',
-      //   importPath: '<%= yeoman.app %>/components'//,
-      //   //relativeAssets: true
-      // },
-      dist: { },
+      dist: {},
       server: {
         options: {
           debugInfo: true
@@ -231,16 +221,11 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
-          // src: [
-          //   '*.{ico,txt}',
-          //   '.htaccess',
-          //   'components/**/*',
-          //   'images/{,*/}*.{gif,webp}'
-          // ]
           src: [
             '*.{ico,txt}',
-            'views/*.html',
-            '.htaccess'
+            '.htaccess',
+            'components/**/*',
+            'images/{,*/}*.{gif,webp}'
           ]
         }]
       }
