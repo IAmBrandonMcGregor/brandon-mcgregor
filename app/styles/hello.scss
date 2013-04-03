@@ -1,7 +1,12 @@
-#Hello { 
-	background-color: silver;
+@import "my_utilities";
+
+#Hello {
+	@include radial-background-gradient(#d5cea6);
+
 
 	.words {
+		font-size: 16px;
+		line-height: normal;
 		margin-bottom: 70px;
 		position: absolute;
 		bottom: 0px;

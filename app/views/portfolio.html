@@ -1,7 +1,15 @@
 <section id="Portfolio" class="navigable_section" ng-controller="PortfolioCtrl">
 	<div class="container">
 		<div class="row">
-			<h1 class="span12">Portfolio.</h1>
+			<h1 class="span5">Portfolio.</h1>
+			<nav class="span7 portfolio-navigation">
+				<ul>
+					<li ng-repeat="(idx, project) in projects"
+						ng-click="ScrollToProject(idx)"></li>
+					<li class="current-indicator"
+						style="-webkit-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});"></li>
+				</ul>
+			</nav>
 		</div>
 	</div>
 	<div class="scroll-hide">

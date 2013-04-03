@@ -1,13 +1,42 @@
-
-
 @import "my_utilities";
-$main_color: #CC9999;
+
+$main_color: #74E600;
 
 
-#Portfolio { 
+#Portfolio {
+	@include radial-background-gradient(#74E600);
 
+	nav.portfolio-navigation {
+		//background: rgba(0, 0, 0, 0.15);
+		min-height: 5px;
+		overflow: auto;
 
-	background-color: $main_color;
+		ul {
+			position: relative;
+			height: 40px;
+			padding: 13px 0px;
+			display: block;
+			overflow: auto;
+			float: right;
+			li {
+				display: block;
+				width: 28px;
+				height: 14px;
+				background: darken($main_color, 25);
+				border-radius: 7px;
+				float: left;
+				cursor: pointer;
+				margin-left: 14px;
+				&:first-child { margin-left: 0px; }
+				&.current-indicator {
+					position: absolute;
+					background: lighten($main_color, 10);
+					margin-left: 0px;
+					@include transition-transform(0.2s, ease-in-out);
+				}
+			}
+		}
+	}
 
 	.scroll-hide {
 		position: relative;
@@ -105,7 +134,7 @@ $main_color: #CC9999;
 
 							path {
 								fill: $main_color;
-								-webkit-transform: translate(19px, -4px);
+								@include transform(translate(19px, -4px));
 							}
 						}
 

@@ -20,17 +20,18 @@
         <!--[if lt IE 9]>
             <script src="components/es5-shim/es5-shim.js"></script>
             <script src="components/json3/lib/json3.min.js"></script>
+            <style type="text/css"> .gradient { filter: none; } </style>
         <![endif]-->
 
         <div class="ng-include" src="'views/main_header.html'"></div>
         <div class="ng-view"></div>
 
 
-        <!-- build:js scripts/scripts.js -->
+        
         <script src="components/angular/angular.js"></script>
         <script src="components/jquery/jquery.js"></script>
 
-        
+        <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/WindowSrvc.js"></script>

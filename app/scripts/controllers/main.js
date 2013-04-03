@@ -40,7 +40,15 @@ function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 			WindowSrvc.Init();
 			$scope.SetDynamicStyling();
 			WindowSrvc.GoTo({suppressAnimation : true});
-		}, 100);
+			// ensure it's done.
+			if (WindowSrvc.dimensions.navigable_section.height >= 0) {
+				$timeout(function () {
+					WindowSrvc.Init();
+					$scope.SetDynamicStyling();
+					WindowSrvc.GoTo({suppressAnimation : true});
+				}, 600);
+			}
+		}, 200);
 	});
 
 	$scope.$on('$routeUpdate', function () {

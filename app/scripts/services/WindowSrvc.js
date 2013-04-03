@@ -105,7 +105,7 @@ angular.module('brandonMcgregorApp')
             WindowSrvc.positions.project_list.x = jQuery(this).scrollLeft();
             WindowSrvc.positions.project_list.y = jQuery(this).scrollTop();
             // broadcast via Root Scope.
-            $rootScope.$broadcast('Project-Wrapper-Scroll');
+            $rootScope.$broadcast('Project-Wrapper-Scroll', WindowSrvc);
         });
     };
 

@@ -54,17 +54,17 @@ html, body {
 	height: 700px;
 
 	// Create an inset shadow on the top.
-	&:before {
-		display: block;
-		content: ' ';
-		position: absolute;
-		top: 0px; left: 15%; z-index: 999;
-		width: 70%;
-		height: 0px;
-		background: black;
-		border-radius: 100%;
-		box-shadow: 0px -55px 150px 30px #111;
-	}
+	// &:before {
+	// 	display: block;
+	// 	content: ' ';
+	// 	position: absolute;
+	// 	top: 0px; left: 15%; z-index: 999;
+	// 	width: 70%;
+	// 	height: 0px;
+	// 	background: black;
+	// 	border-radius: 100%;
+	// 	box-shadow: 0px -55px 150px 30px #111;
+	// }
 }
 
 

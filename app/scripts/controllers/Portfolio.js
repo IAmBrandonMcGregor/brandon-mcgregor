@@ -4,7 +4,8 @@ angular.module('brandonMcgregorApp')
 .controller('PortfolioCtrl', ['$scope', function ($scope) {
 
 	// Keep an eyeon where the project-list is positioned.
-	$scope.project_list_position = 0;
+	$scope.project_list_position = {x:0,y:0};
+	$scope.current_project_idx = 0;
 
 	// Create our list of projects.
 	$scope.projects = [
@@ -25,14 +26,16 @@ angular.module('brandonMcgregorApp')
 			live_url : 'http://www.1023software.com',
 			background_image_url : 'images/1023software.png',
 			open : false
-		}/*,
+		},
 		{
 			name : 'Brave Plastic',
 			description : 'An experiment to see how fast web sockets could transfer touch data.',
+			description_long : "I originally thought of this experiment while thinking of a web based game concept where the user controlled their character using their phone as a controller. I wanted to test how efficiently a socket could communicate information from their 'controller' in real time. The results are very promising.",
 			source_code_url : 'https://github.com/IAmBrandonMcGregor/Brave-Plastic',
-			background_image_url : 'http://placehold.it/800x800',
+			live_url : 'http://brandonmcgregor.com/Brave-Plastic',
+			background_image_url : 'images/brave_plastic.png',
 			open : false
-		}*/
+		}
 	],
 
 	// Depending on project's code availability, provide the proper SVG icon.
@@ -62,4 +65,50 @@ angular.module('brandonMcgregorApp')
 		else
 			return project.live_url;
 	};
+
+	$scope.ScrollToProject = function (idx) {
+		var over_width = jQuery('.projects-wrapper').outerWidth();
+		var under_width = $scope.projects.length * 800;
+		var total_available_scroll_space = under_width - over_width;
+		var break_width = total_available_scroll_space / $scope.projects.length;
+
+		var scroll_to = 0;
+		if (idx !== 0) {
+			if (idx === ($scope.projects.length - 1))
+				scroll_to = under_width;
+			else {
+				var ns = ((800 * idx) - 150);
+				if (ns <= (break_width*(idx+1)))
+					scroll_to = ns;
+				else
+					scroll_to = (break_width*idx) + 5;
+			}
+		}
+
+
+		jQuery('.projects-wrapper').animate({
+			scrollLeft : scroll_to
+		}, 400);
+	};
+
+
+	// Listen for updates to the scroll position.
+	$scope.$on('Project-Wrapper-Scroll', function (event, WindowSrvc) {
+		var over_width = jQuery('.projects-wrapper').outerWidth();
+		var under_width = $scope.projects.length * 800;
+		var total_available_scroll_space = under_width - over_width;
+		var break_width = total_available_scroll_space / $scope.projects.length;
+		var new_idx = $scope.current_project_idx;
+
+		for (var i=0,l=$scope.projects.length; i<l; i++) {
+			if (WindowSrvc.positions.project_list.x <= ((i+1) * break_width)){
+				new_idx = i;
+				break;
+			}
+		}
+		if ($scope.current_project_idx !== new_idx) {
+			$scope.current_project_idx = new_idx;
+			$scope.$apply();
+		}
+	});
 }]);
