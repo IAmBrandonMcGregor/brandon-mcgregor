@@ -1,0 +1,8 @@
+<section id="Plastic" ng-controller="PlasticCtrl">
+	<ul class="coordinates plastic">
+		<li class="coordinate" ng-repeat="coordinate in points.local.Plastic" ng-style="GetMovementCSS(coordinate.x, coordinate.y)"></li>
+	</ul>
+	<ul class="coordinates">
+		<li class="coordinate brave" ng-repeat="coordinate in points.server.Brave" ng-style="GetMovementCSS(coordinate.x, coordinate.y)"></li>
+	</ul>
+</section>
