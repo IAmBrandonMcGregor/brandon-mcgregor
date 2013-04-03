@@ -20,18 +20,19 @@ angular.module('brandonMcgregorApp')
 		{
 			name : '1023 Software Website',
 			description : 'A CMS (Kentico) based website for 1023 Software.',
+			description_long : "This was my first CMS website while working in-house at SalesPad. Working from images from the in-house designer, I constructed pages, CMS templates, objects, and rules that allowed for easy addition or updating of specified page portions and elements.",
 			source_code_url : null,
 			live_url : 'http://www.1023software.com',
 			background_image_url : 'images/1023software.png',
 			open : false
-		},
+		}/*,
 		{
 			name : 'Brave Plastic',
 			description : 'An experiment to see how fast web sockets could transfer touch data.',
 			source_code_url : 'https://github.com/IAmBrandonMcGregor/Brave-Plastic',
 			background_image_url : 'http://placehold.it/800x800',
 			open : false
-		}
+		}*/
 	],
 
 	// Depending on project's code availability, provide the proper SVG icon.

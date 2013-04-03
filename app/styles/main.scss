@@ -2,6 +2,18 @@
 @import "compass_twitter_bootstrap_responsive";
 @import "my_utilities";
 
+// @import "compass/css3/font-face";
+// @include font-face("BebasNeueRegular",
+// 	font-files (
+// 		"bebas-neue/BebasNeue-webfont.woff", woff,
+// 		"bebas-neue/BebasNeue-webfont.ttf", ttf,
+// 		"bebas-neue/BebasNeue-webfont.svg#BebasNeueRegular", svg
+// 	),
+// 	"bebas-neue/BebasNeue-webfont.eot",
+// 	normal,
+// 	normal
+// );
+
 
 
 /* box-sizing reset.  Make padding make sense! */
@@ -65,14 +77,15 @@ html, body {
 /* Bebas Neue */
 @font-face {
     font-family: 'BebasNeueRegular';
-    src: url('../assets/fonts/bebas-neue/BebasNeue-webfont.eot');
-    src: url('../assets/fonts/bebas-neue/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../assets/fonts/bebas-neue/BebasNeue-webfont.woff') format('woff'),
-         url('../assets/fonts/bebas-neue/BebasNeue-webfont.ttf') format('truetype'),
-         url('../assets/fonts/bebas-neue/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    src: url('../styles/fonts/bebas-neue/BebasNeue-webfont.eot');
+    src: url('../styles/fonts/bebas-neue/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../styles/fonts/bebas-neue/BebasNeue-webfont.woff') format('woff'),
+         url('../styles/fonts/bebas-neue/BebasNeue-webfont.ttf') format('truetype'),
+         url('../styles/fonts/bebas-neue/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+
 
 
 // import the smaller sections.

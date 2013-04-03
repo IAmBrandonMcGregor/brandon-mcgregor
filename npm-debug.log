@@ -1,0 +1,206 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/brandon/nvm/v0.8.22/bin/node',
+1 verbose cli   '/home/brandon/nvm/v0.8.22/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@1.2.14
+3 info using node@v0.8.22
+4 verbose read json /home/brandon/projects/brandon-mcgregor/package.json
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/home/brandon/projects/brandon-mcgregor',
+6 verbose install   [ 'grunt',
+6 verbose install     'grunt-contrib-copy',
+6 verbose install     'grunt-contrib-concat',
+6 verbose install     'grunt-contrib-coffee',
+6 verbose install     'grunt-contrib-uglify',
+6 verbose install     'grunt-contrib-compass',
+6 verbose install     'grunt-contrib-jshint',
+6 verbose install     'grunt-contrib-mincss',
+6 verbose install     'grunt-contrib-connect',
+6 verbose install     'grunt-contrib-clean',
+6 verbose install     'grunt-contrib-htmlmin',
+6 verbose install     'grunt-contrib-imagemin',
+6 verbose install     'grunt-contrib-livereload',
+6 verbose install     'grunt-bower-hooks',
+6 verbose install     'grunt-usemin',
+6 verbose install     'grunt-regarde',
+6 verbose install     'grunt-karma',
+6 verbose install     'grunt-open',
+6 verbose install     'matchdep',
+6 verbose install     'grunt-google-cdn',
+6 verbose install     'grunt-ngmin' ] ]
+7 verbose from cache /home/brandon/projects/brandon-mcgregor/package.json
+8 info preinstall brandonmcgregor@0.0.0
+9 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-usemin/package.json
+10 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-copy/package.json
+11 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-ngmin/package.json
+12 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/matchdep/package.json
+13 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-karma/package.json
+14 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-open/package.json
+15 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-uglify/package.json
+16 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-bower-hooks/package.json
+17 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-concat/package.json
+18 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-jshint/package.json
+19 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-clean/package.json
+20 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-connect/package.json
+21 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-google-cdn/package.json
+22 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/generator-karma/package.json
+23 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt/package.json
+24 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/bower/package.json
+25 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-regarde/package.json
+26 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/generator-angular/package.json
+27 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-coffee/package.json
+28 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-compass/package.json
+29 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/gruntacular/package.json
+30 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-livereload/package.json
+31 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-imagemin/package.json
+32 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-htmlmin/package.json
+33 verbose read json /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-mincss/package.json
+34 verbose from cache /home/brandon/projects/brandon-mcgregor/package.json
+35 verbose readDependencies using package.json deps
+36 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-usemin/package.json
+37 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-copy/package.json
+38 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-ngmin/package.json
+39 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/matchdep/package.json
+40 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-karma/package.json
+41 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-open/package.json
+42 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-uglify/package.json
+43 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-bower-hooks/package.json
+44 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-concat/package.json
+45 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-jshint/package.json
+46 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-clean/package.json
+47 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-connect/package.json
+48 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-google-cdn/package.json
+49 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/generator-karma/package.json
+50 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt/package.json
+51 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/bower/package.json
+52 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-regarde/package.json
+53 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/generator-angular/package.json
+54 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-coffee/package.json
+55 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-compass/package.json
+56 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/gruntacular/package.json
+57 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-livereload/package.json
+58 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-imagemin/package.json
+59 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-htmlmin/package.json
+60 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/grunt-contrib-mincss/package.json
+61 verbose already installed skipping grunt@0.4.0rc7 /home/brandon/projects/brandon-mcgregor
+62 verbose already installed skipping grunt-contrib-copy@0.4.0rc7 /home/brandon/projects/brandon-mcgregor
+63 verbose already installed skipping grunt-contrib-concat@0.1.2rc6 /home/brandon/projects/brandon-mcgregor
+64 verbose already installed skipping grunt-contrib-coffee@0.4.0rc7 /home/brandon/projects/brandon-mcgregor
+65 verbose already installed skipping grunt-contrib-uglify@0.1.1rc6 /home/brandon/projects/brandon-mcgregor
+66 verbose already installed skipping grunt-contrib-compass@0.1.1rc8 /home/brandon/projects/brandon-mcgregor
+67 verbose already installed skipping grunt-contrib-jshint@0.1.1rc6 /home/brandon/projects/brandon-mcgregor
+68 verbose already installed skipping grunt-contrib-connect@0.1.1rc6 /home/brandon/projects/brandon-mcgregor
+69 verbose already installed skipping grunt-contrib-mincss@0.4.0rc7 /home/brandon/projects/brandon-mcgregor
+70 verbose already installed skipping grunt-contrib-clean@0.4.0rc6 /home/brandon/projects/brandon-mcgregor
+71 verbose already installed skipping grunt-contrib-htmlmin@0.1.1rc7 /home/brandon/projects/brandon-mcgregor
+72 verbose already installed skipping grunt-contrib-imagemin@0.1.1rc8 /home/brandon/projects/brandon-mcgregor
+73 verbose already installed skipping grunt-contrib-livereload@0.1.0rc8 /home/brandon/projects/brandon-mcgregor
+74 verbose already installed skipping grunt-bower-hooks@~0.2.0 /home/brandon/projects/brandon-mcgregor
+75 verbose already installed skipping grunt-regarde@~0.1.1 /home/brandon/projects/brandon-mcgregor
+76 verbose already installed skipping grunt-usemin@~0.1.7 /home/brandon/projects/brandon-mcgregor
+77 verbose already installed skipping grunt-karma@~0.3.0 /home/brandon/projects/brandon-mcgregor
+78 verbose already installed skipping grunt-open@~0.1.0 /home/brandon/projects/brandon-mcgregor
+79 verbose already installed skipping matchdep@~0.1.1 /home/brandon/projects/brandon-mcgregor
+80 verbose already installed skipping grunt-google-cdn@~0.1.0 /home/brandon/projects/brandon-mcgregor
+81 verbose already installed skipping grunt-ngmin@~0.0.1 /home/brandon/projects/brandon-mcgregor
+82 silly resolved []
+83 info build /home/brandon/projects/brandon-mcgregor
+84 verbose from cache /home/brandon/projects/brandon-mcgregor/package.json
+85 verbose linkStuff [ false, false, false, '/home/brandon/projects' ]
+86 info linkStuff brandonmcgregor@0.0.0
+87 verbose linkBins brandonmcgregor@0.0.0
+88 verbose linkMans brandonmcgregor@0.0.0
+89 verbose rebuildBundles brandonmcgregor@0.0.0
+90 verbose rebuildBundles [ 'grunt-usemin',
+90 verbose rebuildBundles   'grunt-contrib-copy',
+90 verbose rebuildBundles   'grunt-ngmin',
+90 verbose rebuildBundles   'matchdep',
+90 verbose rebuildBundles   'grunt-karma',
+90 verbose rebuildBundles   'grunt-open',
+90 verbose rebuildBundles   'grunt-contrib-uglify',
+90 verbose rebuildBundles   'grunt-bower-hooks',
+90 verbose rebuildBundles   'grunt-contrib-concat',
+90 verbose rebuildBundles   'grunt-contrib-jshint',
+90 verbose rebuildBundles   'grunt-contrib-clean',
+90 verbose rebuildBundles   'grunt-contrib-connect',
+90 verbose rebuildBundles   'grunt-google-cdn',
+90 verbose rebuildBundles   'generator-karma',
+90 verbose rebuildBundles   'grunt',
+90 verbose rebuildBundles   'bower',
+90 verbose rebuildBundles   'grunt-regarde',
+90 verbose rebuildBundles   'generator-angular',
+90 verbose rebuildBundles   'grunt-contrib-coffee',
+90 verbose rebuildBundles   '.bin',
+90 verbose rebuildBundles   'grunt-contrib-compass',
+90 verbose rebuildBundles   'gruntacular',
+90 verbose rebuildBundles   'grunt-contrib-livereload',
+90 verbose rebuildBundles   'grunt-contrib-imagemin',
+90 verbose rebuildBundles   'grunt-contrib-htmlmin',
+90 verbose rebuildBundles   'grunt-contrib-mincss' ]
+91 verbose rebuild bundle /home/brandon/projects/brandon-mcgregor/node_modules/generator-karma
+92 info build /home/brandon/projects/brandon-mcgregor/node_modules/generator-karma
+93 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/generator-karma/package.json
+94 info preinstall generator-karma@0.2.0
+95 verbose linkStuff [ false,
+95 verbose linkStuff   false,
+95 verbose linkStuff   false,
+95 verbose linkStuff   '/home/brandon/projects/brandon-mcgregor/node_modules' ]
+96 info linkStuff generator-karma@0.2.0
+97 verbose linkBins generator-karma@0.2.0
+98 verbose linkMans generator-karma@0.2.0
+99 verbose rebuildBundles generator-karma@0.2.0
+100 verbose rebuildBundles [ 'colors', 'semver', '.bin', 'yeoman-generator' ]
+101 info install generator-karma@0.2.0
+102 info postinstall generator-karma@0.2.0
+103 verbose rebuild bundle /home/brandon/projects/brandon-mcgregor/node_modules/bower
+104 info build /home/brandon/projects/brandon-mcgregor/node_modules/bower
+105 verbose from cache /home/brandon/projects/brandon-mcgregor/node_modules/bower/package.json
+106 info preinstall bower@0.8.5
+107 verbose linkStuff [ false,
+107 verbose linkStuff   false,
+107 verbose linkStuff   false,
+107 verbose linkStuff   '/home/brandon/projects/brandon-mcgregor/node_modules' ]
+108 info linkStuff bower@0.8.5
+109 warn prefer global bower@0.8.5 should be installed with -g
+110 verbose linkBins bower@0.8.5
+111 verbose link bins [ { bower: 'bin/bower' },
+111 verbose link bins   '/home/brandon/projects/brandon-mcgregor/node_modules/.bin',
+111 verbose link bins   false ]
+112 verbose linkMans bower@0.8.5
+113 verbose rebuildBundles bower@0.8.5
+114 verbose rebuildBundles [ 'mkdirp',
+114 verbose rebuildBundles   'nopt',
+114 verbose rebuildBundles   'archy',
+114 verbose rebuildBundles   'async',
+114 verbose rebuildBundles   'read-package-json',
+114 verbose rebuildBundles   'glob',
+114 verbose rebuildBundles   'stable',
+114 verbose rebuildBundles   'tar',
+114 verbose rebuildBundles   'fstream',
+114 verbose rebuildBundles   'hogan.js',
+114 verbose rebuildBundles   'request',
+114 verbose rebuildBundles   'tmp',
+114 verbose rebuildBundles   'lodash',
+114 verbose rebuildBundles   'colors',
+114 verbose rebuildBundles   'unzip',
+114 verbose rebuildBundles   'rimraf',
+114 verbose rebuildBundles   'semver',
+114 verbose rebuildBundles   '.bin',
+114 verbose rebuildBundles   'rc',
+114 verbose rebuildBundles   'promptly' ]
+115 error Error: EACCES, unlink '/home/brandon/projects/brandon-mcgregor/node_modules/.bin/bower'
+115 error  { [Error: EACCES, unlink '/home/brandon/projects/brandon-mcgregor/node_modules/.bin/bower']
+115 error   errno: 3,
+115 error   code: 'EACCES',
+115 error   path: '/home/brandon/projects/brandon-mcgregor/node_modules/.bin/bower' }
+116 error Please try running this command again as root/Administrator.
+117 error System Linux 3.5.0-26-generic
+118 error command "/home/brandon/nvm/v0.8.22/bin/node" "/home/brandon/nvm/v0.8.22/bin/npm" "install"
+119 error cwd /home/brandon/projects/brandon-mcgregor
+120 error node -v v0.8.22
+121 error npm -v 1.2.14
+122 error path /home/brandon/projects/brandon-mcgregor/node_modules/.bin/bower
+123 error code EACCES
+124 error errno 3
+125 error stack Error: EACCES, unlink '/home/brandon/projects/brandon-mcgregor/node_modules/.bin/bower'
+126 verbose exit [ 3, true ]
