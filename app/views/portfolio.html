@@ -7,7 +7,8 @@
 					<li ng-repeat="(idx, project) in projects"
 						ng-click="ScrollToProject(idx)"></li>
 					<li class="current-indicator"
-						style="-webkit-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});"></li>
+						style="-webkit-transform: -webkit-translate({{ (42*current_project_idx) + 'px, 0px' }});-moz-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});-ms-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});-o-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});transform: translate({{ (42*current_project_idx) + 'px, 0px' }});"
+						ng-click="ScrollToProject(current_project_idx)"></li>
 				</ul>
 			</nav>
 		</div>
