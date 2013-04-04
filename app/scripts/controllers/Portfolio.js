@@ -32,7 +32,7 @@ angular.module('brandonMcgregorApp')
 			description : 'An experiment to see how fast web sockets could transfer touch data.',
 			description_long : "I originally thought of this experiment while thinking of a web based game concept where the user controlled their character using their phone as a controller. I wanted to test how efficiently a socket could communicate information from their 'controller' in real time. The results are very promising.",
 			source_code_url : 'https://github.com/IAmBrandonMcGregor/Brave-Plastic',
-			live_url : 'http://brandonmcgregor.com/Brave-Plastic',
+			live_url : 'http://www.brandonmcgregor.com/Brave-Plastic',
 			background_image_url : 'images/brave_plastic.png',
 			open : false
 		}
