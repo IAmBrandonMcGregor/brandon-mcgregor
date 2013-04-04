@@ -67,48 +67,60 @@ angular.module('brandonMcgregorApp')
 	};
 
 	$scope.ScrollToProject = function (idx) {
-		var over_width = jQuery('.projects-wrapper').outerWidth();
-		var under_width = $scope.projects.length * 800;
-		var total_available_scroll_space = under_width - over_width;
-		var break_width = total_available_scroll_space / $scope.projects.length;
-
-		var scroll_to = 0;
-		if (idx !== 0) {
-			if (idx === ($scope.projects.length - 1))
-				scroll_to = under_width;
-			else {
-				var ns = ((800 * idx) - 150);
-				if (ns <= (break_width*(idx+1)))
-					scroll_to = ns;
-				else
-					scroll_to = (break_width*idx) + 5;
-			}
-		}
-
+		var idx_project_position = jQuery(document.getElementsByClassName('project')[idx]).position().left;
+		var center_of_screen = (jQuery(window).width() / 2);
+		var where_the_projects_left_side_should_be = center_of_screen - 400;
+		var needed_offset = idx_project_position - where_the_projects_left_side_should_be;
 
 		jQuery('.projects-wrapper').animate({
-			scrollLeft : scroll_to
-		}, 400);
+			scrollLeft : (jQuery('.projects-wrapper').scrollLeft() + needed_offset)
+		},500);
+		//jQuery('.projects-wrapper').scrollLeft( idx_project_position - ((jQuery(window).width() / 2) - 400) );
 	};
 
 
 	// Listen for updates to the scroll position.
 	$scope.$on('Project-Wrapper-Scroll', function (event, WindowSrvc) {
-		var over_width = jQuery('.projects-wrapper').outerWidth();
-		var under_width = $scope.projects.length * 800;
-		var total_available_scroll_space = under_width - over_width;
-		var break_width = total_available_scroll_space / $scope.projects.length;
-		var new_idx = $scope.current_project_idx;
-
-		for (var i=0,l=$scope.projects.length; i<l; i++) {
-			if (WindowSrvc.positions.project_list.x <= ((i+1) * break_width)){
-				new_idx = i;
-				break;
+		var dom_projects = document.getElementsByClassName('project');
+		var center_of_screen = jQuery(window).width() / 2;
+		var new_idx = null;
+		for (var i=0,l=dom_projects.length; i<l; i++) {
+			if (jQuery(dom_projects[i]).position().left <= center_of_screen) {
+				if (angular.isDefined(jQuery(dom_projects[i+1]).position())) {
+					if (jQuery(dom_projects[i+1]).position().left > center_of_screen) {
+						new_idx = i;
+						break;
+					}
+				}
 			}
 		}
-		if ($scope.current_project_idx !== new_idx) {
-			$scope.current_project_idx = new_idx;
-			$scope.$apply();
+
+		if (jQuery('.projects-wrapper').scrollLeft() >= (jQuery('.list-of-projects').width() - jQuery('.projects-wrapper').width())
+			|| new_idx === null)
+		{
+			new_idx = dom_projects.length - 1;
 		}
+
+		$scope.current_project_idx = new_idx;
+		$scope.$apply();
+
+		// TODO: Clean this up.
+
+		// var over_width = jQuery('.projects-wrapper').outerWidth();
+		// var under_width = $scope.projects.length * 800;
+		// var total_available_scroll_space = under_width - over_width;
+		// var break_width = total_available_scroll_space / $scope.projects.length;
+		// var new_idx = $scope.current_project_idx;
+
+		// for (var i=0,l=$scope.projects.length; i<l; i++) {
+		// 	if (WindowSrvc.positions.project_list.x <= ((i+1) * break_width)){
+		// 		new_idx = i;
+		// 		break;
+		// 	}
+		// }
+		// if ($scope.current_project_idx !== new_idx) {
+		// 	$scope.current_project_idx = new_idx;
+		// 	$scope.$apply();
+		// }
 	});
 }]);
