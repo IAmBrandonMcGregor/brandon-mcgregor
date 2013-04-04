@@ -1,13 +1,13 @@
 <section id="Portfolio" class="navigable_section" ng-controller="PortfolioCtrl">
-	<div class="container">
-		<div class="row">
+	<div class="container-fluid">
+		<div class="row-fluid">
 			<h1 class="span5">Portfolio.</h1>
 			<nav class="span7 portfolio-navigation">
 				<ul>
 					<li ng-repeat="(idx, project) in projects"
 						ng-click="ScrollToProject(idx)"></li>
 					<li class="current-indicator"
-						style="-webkit-transform: -webkit-translate({{ (42*current_project_idx) + 'px, 0px' }});-moz-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});-ms-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});-o-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});transform: translate({{ (42*current_project_idx) + 'px, 0px' }});"
+						style="-webkit-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});-moz-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});-ms-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});-o-transform: translate({{ (42*current_project_idx) + 'px, 0px' }});transform: translate({{ (42*current_project_idx) + 'px, 0px' }});"
 						ng-click="ScrollToProject(current_project_idx)"></li>
 				</ul>
 			</nav>
