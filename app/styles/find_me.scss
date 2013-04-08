@@ -1,8 +1,44 @@
 
 
 #FindMe {
-	background-position: 50% 50%;
-	//background-size: cover;
-	background-repeat: no-repeat;
-	background-image: url(../images/milky_way.jpg);
+	background: url('/images/milky_way.jpg') top center no-repeat fixed;
+
+	.links_wrapper {
+		margin-top: 140px;
+
+		ul {
+			display: block;
+			overflow: auto;
+
+
+			li {
+				margin-top: 196px;
+				overflow: auto;
+
+				.circle {
+					display: table;
+					line-height: 100%;
+					border-radius: 100%;
+					background: black;
+					border: 14px solid transparentize(white, .6);
+					box-shadow: inset 0px 0px 0px 14px transparentize(white, .55);
+					width: 140px;
+					height: 140px;
+					margin: 0 auto;
+					cursor: pointer;
+
+					a {
+						display: table-cell;
+						vertical-align: middle;
+						text-align: center;
+
+						font-size: 18px;
+						line-height: normal;
+						color: white;
+						&:hover { text-decoration: none; }
+					}
+				}
+			}
+		}
+	}
 }
