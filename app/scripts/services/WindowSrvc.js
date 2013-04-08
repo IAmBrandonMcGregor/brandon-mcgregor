@@ -62,11 +62,7 @@ angular.module('brandonMcgregorApp')
         for (var i=0, l=$rootScope.sections.length; i<l; i++) {
             if ($rootScope.sections[i].name === section) {
                 idx = i;
-                $rootScope.active_section_idx = i;
                 break;
-            }
-            else {
-                $rootScope.active_section_idx = idx;
             }
         }
 
@@ -94,9 +90,9 @@ angular.module('brandonMcgregorApp')
         }.bind(WindowSrvc));
 
         // Add an event listener for SCROLL events.
-        jQuery(window).scroll(function () {
-            WindowSrvc.positions.screen.x = jQuery(window).scrollLeft();
-            WindowSrvc.positions.screen.y = jQuery(window).scrollTop();
+        jQuery('#Page').scroll(function () {
+            WindowSrvc.positions.screen.x = jQuery('#Page').scrollLeft();
+            WindowSrvc.positions.screen.y = jQuery('#Page').scrollTop();
             $rootScope.$broadcast('Scroll', WindowSrvc);
         });
 
