@@ -19,13 +19,22 @@
 					display: table;
 					line-height: 100%;
 					border-radius: 100%;
-					background: black;
-					border: 14px solid transparentize(white, .6);
-					box-shadow: inset 0px 0px 0px 14px transparentize(white, .55);
+					background: transparentize(black, .4);
+					border: 14px solid transparentize(white, .65);
+					box-shadow: inset 0px 0px 0px 14px transparentize(white, .7);
 					width: 140px;
 					height: 140px;
 					margin: 0 auto;
 					cursor: pointer;
+
+					&:hover {
+						background: transparentize(white, .4);
+						border: 14px solid transparentize(black, .65);
+						box-shadow: inset 0px 0px 0px 14px transparentize(black, .7);
+						a {
+							color: black;
+						}
+					}
 
 					a {
 						display: table-cell;
