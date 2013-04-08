@@ -6,7 +6,7 @@ function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 
 	$scope.Init = function () {
 
-		//$rootScope.active_section_idx = 0;
+		$rootScope.active_section_idx = 0;
 		
 		// Setup Screen Size and Listening
 		$scope.SetDynamicStyling();
