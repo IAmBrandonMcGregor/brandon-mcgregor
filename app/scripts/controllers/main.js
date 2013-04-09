@@ -34,10 +34,18 @@ function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 	$scope.SetDynamicStyling = function () {
 		$scope.scrolling_area_dynamic_styling = {
 			height : ((WindowSrvc.dimensions.screen.height - WindowSrvc.dimensions.header.height) + 'px')
+			//height : (WindowSrvc.dimensions.screen.height - 342 + 'px')
 		};
 		$scope.section_dynamics_styling = {
 			height : ((WindowSrvc.dimensions.screen.height - WindowSrvc.dimensions.header.height) + 'px')
+			//height : (WindowSrvc.dimensions.screen.height - 342 + 'px')
 		};
+
+		// Ensure a minimum section size of 650 pixels.
+		if (parseInt($scope.section_dynamics_styling.height) < 650) {
+			console.log('hit');
+			$scope.section_dynamics_styling = { height : '650px' };
+		}
 	};
 
 	$scope.$on('$viewContentLoaded', function () {
