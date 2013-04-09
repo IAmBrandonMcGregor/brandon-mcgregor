@@ -43,7 +43,6 @@ function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 
 		// Ensure a minimum section size of 650 pixels.
 		if (parseInt($scope.section_dynamics_styling.height) < 650) {
-			console.log('hit');
 			$scope.section_dynamics_styling = { height : '650px' };
 		}
 	};
