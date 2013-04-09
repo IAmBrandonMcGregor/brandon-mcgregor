@@ -1,10 +1,15 @@
 @import "my_utilities";
 
-$main_color: #74E600;
-
+$main_color: #EFFCFF;
+$indicator_color: #687473;
 
 #Portfolio {
-	@include radial-background-gradient(#74E600);
+	//@include radial-background-gradient(#74E600);
+	background: url('/images/startrail_over_tokyo_ginza.jpg') top center no-repeat fixed;
+
+	.section-name {
+		color: $main-color;
+	}
 
 	nav.portfolio-navigation {
 		//background: rgba(0, 0, 0, 0.15);
@@ -147,10 +152,10 @@ $main_color: #74E600;
 
 						&:hover {
 							span {
-								color: invert($main_color);
+								color: $indicator_color;
 							}
 							svg > path {
-								fill: invert($main_color);
+								fill: $indicator_color;
 							}
 						}
 					}
