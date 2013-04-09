@@ -36,7 +36,7 @@ function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 			height : ((WindowSrvc.dimensions.screen.height - WindowSrvc.dimensions.header.height) + 'px')
 		};
 		$scope.section_dynamics_styling = {
-			height : (WindowSrvc.dimensions.screen.height + 'px')
+			height : ((WindowSrvc.dimensions.screen.height - WindowSrvc.dimensions.header.height) + 'px')
 		};
 	};
 
@@ -69,7 +69,7 @@ function ($scope, $location, $rootScope, $timeout, WindowSrvc) {
 			for (var i=0, l=$rootScope.sections.length; i<l; i++) {
 				center_of_project = (WindowSrvc.dimensions.screen.height * (i+1));
 
-				if (WindowSrvc.positions.screen.y <= (center_of_project-30)) {
+				if (WindowSrvc.positions.screen.y <= (center_of_project-200)) {
 					new_idx = i;
 					break;
 				}

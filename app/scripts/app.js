@@ -3,12 +3,9 @@
 angular.module('brandonMcgregorApp', [])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .otherwise({
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         reloadOnSearch: false
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   }]);
