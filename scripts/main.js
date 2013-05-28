@@ -1,27 +1,28 @@
+
 // Configure require.js
 require.config({
-  paths : {
-    backbone : 'lib/backbone',
-    underscore : 'lib/underscore',
-    jquery : 'lib/jquery',
-    marionette : 'lib/backbone.marionette'
-  },
-  shim : {
-    jquery : {
-      exports : 'jQuery'
+    paths : {
+        backbone : 'lib/backbone',
+        underscore : 'lib/underscore',
+        jquery : 'lib/jquery',
+        marionette : 'lib/backbone.marionette'
     },
-    underscore : {
-      exports : '_'
-    },
-    backbone : {
-      deps : ['jquery', 'underscore'],
-      exports : 'Backbone'
-    },
-    marionette : {
-      deps : ['jquery', 'underscore', 'backbone'],
-      exports : 'Marionette'
+    shim : {
+        jquery : {
+            exports : 'jQuery'
+        },
+        underscore : {
+            exports : '_'
+        },
+        backbone : {
+            deps : ['jquery', 'underscore'],
+            exports : 'Backbone'
+        },
+        marionette : {
+            deps : ['jquery', 'underscore', 'backbone'],
+            exports : 'Marionette'
+        }
     }
-  }
 });
 
 // Perform application initializations.
@@ -31,7 +32,7 @@ require([
 ], 
 
 function ($, App) {
-	$(function () { 
-		App.initialize(); 
+	$(function () {
+		App.start();
 	});
 });
