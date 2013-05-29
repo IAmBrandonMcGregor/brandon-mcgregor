@@ -2,8 +2,9 @@ define([
 	'jquery', 
 	'underscore', 
 	'backbone',
-	'marionette'
-], function ($, _, Backbone, Marionette) {
+	'marionette',
+	'modules/aboutMe'
+], function ($, _, Backbone, Marionette, AboutMe) {
 
 	// Create the Marionette application object.
 	var App = new Marionette.Application();
@@ -20,6 +21,8 @@ define([
 			Backbone.history.start();
 		}
 	});
+
+	App.module("WillThisWork?", AboutMe);
 
     return App;
 });
