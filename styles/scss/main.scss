@@ -1,8 +1,69 @@
 
+//@import "reset";
 
 // Main
-html {
-	body {
-		background-color: transparentize(purple, 0.85);
+$min_width: 600px;
+$padding: 0 0.8em;
+$header_height: 2.6em;
+
+html body {
+
+	font-family: sans-serif;
+	overflow: hidden;
+	min-width: $min_width;
+
+	.full-page {
+		// This class is applied to all pages to ensure they 
+		// take up the entire height and width of the screen.
+		display: block;
+		float: left;
+		height: 100%;
+		width: 100%;
+		padding: $padding;
+	}
+
+	#Portfolio { background: transparentize(blue, 0.85); }
+	#FindMe { background: transparentize(yellow, 0.85); }
+}
+
+#ApplicationHeader {
+	position: absolute;
+	width: 100%;
+	min-width: $min_width;
+	height: $header_height;
+	line-height: $header_height;
+	background: #333;
+	color: white;
+	padding: $padding;
+
+	.my-name {
+		float: left;
+	}
+	nav {
+		float: right;
+		ul {
+			li {
+				float: left;
+				a {
+					margin: 0 1em;
+					&:hover {
+						color: inherit;
+						border-bottom: 1px solid white;
+					}
+					&.current, &:active, &:focus {
+						color: inherit;
+						border-top: 1px solid white;
+						text-decoration: none;
+					}
+				}
+			}
+		}
 	}
 }
+#ApplicationPage {
+	margin-top: $header_height;
+	overflow: auto;
+}
+
+// TODO: Import page-specific SCSS files for publishing.
+//@import "about";

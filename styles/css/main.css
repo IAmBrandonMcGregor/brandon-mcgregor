@@ -1,2 +1,43 @@
 html body {
-  background-color: rgba(128, 0, 128, 0.15); }
+  font-family: sans-serif;
+  overflow: hidden;
+  min-width: 600px; }
+  html body .full-page {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 100%;
+    padding: 0 0.8em; }
+  html body #Portfolio {
+    background: rgba(0, 0, 255, 0.15); }
+  html body #FindMe {
+    background: rgba(255, 255, 0, 0.15); }
+
+#ApplicationHeader {
+  position: absolute;
+  width: 100%;
+  min-width: 600px;
+  height: 2.6em;
+  line-height: 2.6em;
+  background: #333;
+  color: white;
+  padding: 0 0.8em; }
+  #ApplicationHeader .my-name {
+    float: left; }
+  #ApplicationHeader nav {
+    float: right; }
+    #ApplicationHeader nav ul li {
+      float: left; }
+      #ApplicationHeader nav ul li a {
+        margin: 0 1em; }
+        #ApplicationHeader nav ul li a:hover {
+          color: inherit;
+          border-bottom: 1px solid white; }
+        #ApplicationHeader nav ul li a.current, #ApplicationHeader nav ul li a:active, #ApplicationHeader nav ul li a:focus {
+          color: inherit;
+          border-top: 1px solid white;
+          text-decoration: none; }
+
+#ApplicationPage {
+  margin-top: 2.6em;
+  overflow: auto; }
