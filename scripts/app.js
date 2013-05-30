@@ -4,8 +4,10 @@ define([
 	'backbone',
 	'marionette',
 	'modules/mainNavigation',
-	'modules/about'
-], function ($, _, Backbone, Marionette, MainNavigation, About) {
+	'modules/about',
+	'modules/portfolio',
+	'modules/findMe'
+], function ($, _, Backbone, Marionette, MainNavigation, About, Portfolio, FindMe) {
 
 	// Create the Marionette application object.
 	var App = new Marionette.Application();
@@ -34,6 +36,8 @@ define([
 	// Add Modules.
 	App.module("MainNavigation", MainNavigation);
 	App.module("AboutMe", About);
+	App.module("Portfolio", Portfolio);
+	App.module("FindMe", FindMe);
 
     return App;
 });

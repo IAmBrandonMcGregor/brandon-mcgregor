@@ -1,0 +1,16 @@
+#FindMe nav ul {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%; }
+  #FindMe nav ul li {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 25%; }
+    #FindMe nav ul li a.external-link {
+      display: inline-block;
+      width: 5em;
+      height: 5em;
+      border-radius: 100%;
+      background: rgba(0, 0, 0, 0.5); }
