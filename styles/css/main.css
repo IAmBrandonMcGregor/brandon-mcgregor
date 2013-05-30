@@ -31,19 +31,28 @@ html body {
   color: white;
   padding: 0 0.8em; }
   #ApplicationHeader .my-name {
-    float: left; }
+    margin-top: 0.05em;
+    float: left;
+    -webkit-transition: color 0.4s linear;
+    -moz-transition: color 0.4s linear;
+    -ms-transition: color 0.4s linear;
+    -o-transition: color 0.4s linear;
+    transition: color 0.4s linear; }
+    #ApplicationHeader .my-name:hover {
+      color: #c3f0f6; }
   #ApplicationHeader nav {
     float: right; }
     #ApplicationHeader nav ul li {
       float: left; }
       #ApplicationHeader nav ul li a {
+        font-size: 1.25em;
         margin: 0 1em; }
         #ApplicationHeader nav ul li a:hover {
           color: inherit;
-          border-bottom: 1px solid white; }
+          border-bottom: 2px solid white; }
         #ApplicationHeader nav ul li a.current, #ApplicationHeader nav ul li a:active, #ApplicationHeader nav ul li a:focus {
           color: inherit;
-          border-top: 1px solid white;
+          border-top: 2px solid white;
           text-decoration: none; }
 
 #ApplicationPage {

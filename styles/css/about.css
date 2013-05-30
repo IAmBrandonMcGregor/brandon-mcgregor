@@ -7,3 +7,5 @@
   background-size: cover;
   color: white;
   text-transform: uppercase; }
+  #AboutMe h1 {
+    margin: 0.285em 0; }

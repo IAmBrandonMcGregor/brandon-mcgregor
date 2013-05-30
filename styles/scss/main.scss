@@ -6,6 +6,7 @@
 $min_width: 600px;
 $padding: 0 0.8em;
 $header_height: 2.6em;
+$turquois: #C3F0F6;
 
 html body {
 
@@ -38,7 +39,16 @@ html body {
 	padding: $padding;
 
 	.my-name {
+		margin-top: 0.05em;
 		float: left;
+		-webkit-transition: color 0.4s linear;
+		-moz-transition: color 0.4s linear;
+		-ms-transition: color 0.4s linear;
+		-o-transition: color 0.4s linear;
+		transition: color 0.4s linear;
+		&:hover {
+			color: $turquois;
+		}
 	}
 	nav {
 		float: right;
@@ -46,14 +56,15 @@ html body {
 			li {
 				float: left;
 				a {
+					font-size: 1.25em;
 					margin: 0 1em;
 					&:hover {
 						color: inherit;
-						border-bottom: 1px solid white;
+						border-bottom: 2px solid white;
 					}
 					&.current, &:active, &:focus {
 						color: inherit;
-						border-top: 1px solid white;
+						border-top: 2px solid white;
 						text-decoration: none;
 					}
 				}
