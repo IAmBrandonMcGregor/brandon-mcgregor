@@ -1,5 +1,6 @@
 
 //@import "reset";
+@import "bebas-neue";
 
 // Main
 $min_width: 600px;
@@ -8,7 +9,7 @@ $header_height: 2.6em;
 
 html body {
 
-	font-family: sans-serif;
+	font-family: 'BebasNeueRegular', sans-serif;
 	overflow: hidden;
 	min-width: $min_width;
 
