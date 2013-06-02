@@ -1,0 +1,83 @@
+
+//@import "reset";
+@import "bebas-neue";
+
+// Main
+$min_width: 600px;
+$padding: 0 0.8em;
+$header_height: 2.6em;
+$turquois: #C3F0F6;
+
+html body {
+
+	font-family: 'BebasNeueRegular', sans-serif;
+	overflow: hidden;
+	min-width: $min_width;
+
+	.full-page {
+		// This class is applied to all pages to ensure they 
+		// take up the entire height and width of the screen.
+		display: block;
+		float: left;
+		height: 100%;
+		width: 100%;
+		padding: $padding;
+	}
+
+	#Portfolio { background: transparentize(blue, 0.85); }
+	#FindMe { background: transparentize(yellow, 0.85); }
+}
+
+#ApplicationHeader {
+	position: absolute;
+	width: 100%;
+	min-width: $min_width;
+	height: $header_height;
+	line-height: $header_height;
+	background: #333;
+	color: white;
+	padding: $padding;
+
+	.my-name {
+		margin-top: 0.05em;
+		float: left;
+		-webkit-transition: color 0.4s linear;
+		-moz-transition: color 0.4s linear;
+		-ms-transition: color 0.4s linear;
+		-o-transition: color 0.4s linear;
+		transition: color 0.4s linear;
+		&:hover {
+			color: $turquois;
+		}
+	}
+	nav {
+		float: right;
+		ul {
+			li {
+				float: left;
+				a {
+					font-size: 1.25em;
+					margin: 0 1em;
+					&:hover {
+						color: inherit;
+						border-bottom: 2px solid white;
+					}
+					&.current, &:active, &:focus {
+						color: inherit;
+						border-top: 2px solid white;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+#ApplicationPage {
+	margin-top: $header_height;
+	overflow: auto;
+}
+
+// TODO: Import page-specific SCSS files for publishing.
+//@import "about";
+//@import "portfolio";
+//@import "findMe";

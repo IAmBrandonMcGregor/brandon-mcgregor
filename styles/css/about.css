@@ -1,0 +1,11 @@
+#AboutMe {
+  background-color: rgba(0, 128, 0, 0.15);
+  background-image: url("../../images/thegift.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  text-transform: uppercase; }
+  #AboutMe h1 {
+    margin: 0.285em 0; }
