@@ -31,8 +31,6 @@ define([
 		// Make sure we resize when necessary.
 		$(window).on("resize", function () { self.resize(); });
 
-		// TODO: Add a listener for re-size events, so we can recalculate the section sizes.
-
 		// Setup the router to control our application.
 		this.router = new Router();
 	});
