@@ -15,7 +15,7 @@ define([
 		// --------------------------------------
 		var Controller = Marionette.Controller.extend({
 			initialize: function (options) {
-				this.region = options.region
+				this.region = options.region;
 			},
 			show: function () {
 				this.region.show(view);

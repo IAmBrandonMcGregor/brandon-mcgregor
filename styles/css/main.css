@@ -16,10 +16,6 @@ html body {
     height: 100%;
     width: 100%;
     padding: 0 0.8em; }
-  html body #Portfolio {
-    background: rgba(0, 0, 255, 0.15); }
-  html body #FindMe {
-    background: rgba(255, 255, 0, 0.15); }
 
 #ApplicationHeader {
   position: absolute;

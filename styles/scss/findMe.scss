@@ -1,22 +1,44 @@
 #FindMe { 
+
+	background-color: transparentize(green, 0.85);
+	background-image: url("../../images/milkyway.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	//background-size: cover; 
+
 	nav {
+
 		ul {
-			display: block;
+			display: table;
 			overflow: auto;
 			width: 100%;
 			height: 100%;
+
 			li {
-				display: block;
-				float: left;
+				display: table-cell;
+				vertical-align: middle;
 				text-align: center;
 				width: 25%;
 
 				a.external-link {
 					display: inline-block;
-					width: 5em;
-					height: 5em;
+					width: 8.5em;
+					height: 8.5em;
 					border-radius: 100%;
-					background: transparentize(black, 0.5);
+					padding-top: 2.85em;
+					font-size: 1.1em;
+					cursor: pointer;
+
+					color: white;
+					background: transparentize(black, 0.4);
+					border: 1em solid transparentize(white, 0.7);
+					box-shadow: inset 0 0 0 1em transparentize(white, 0.65);
+
+					&:hover {
+						color: black;
+						background: transparentize(white, 0.6);
+					}
 				}
 			}
 		}
