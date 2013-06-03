@@ -1,13 +1,15 @@
 
 define([
-	'views/mainNavigation'
-], function (MainNavigationView) {
+	'lib/text!../../templates/mainNavigation.html'
+], function (template) {
 
 	var mainNavigation = function (Mod, App, Backbone, Marionette, $, _) {
 
 		// Define a view to show
 		// ---------------------
-		//var NavigationView = MainNavigationView;
+		var view = new Marionette.ItemView({
+			template: _.template(template)
+		});
 
 		// Define a controller to run this module
 		// --------------------------------------
@@ -17,18 +19,12 @@ define([
 				this.region = options.region
 
 				// TODO: Add a scroll listener to control which navigation link is marked .current.
+				$('#ApplicationPage').on("scroll", function () {
+					console.log("Scrolling!");
+				});
 			},
 
 			show: function () {
-
-				// var model = new Backbone.Model({
-				// 	words: "Hamburger!"
-				// });
-
-				var view = new MainNavigationView({
-					//model: model
-				});
-
 				this.region.show(view);
 			}
 		});
