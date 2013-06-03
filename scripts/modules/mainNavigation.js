@@ -18,9 +18,9 @@ define([
 			initialize: function (options) {
 				this.region = options.region
 
-				// TODO: Add a scroll listener to control which navigation link is marked .current.
+				// Watch the scroll position and update the navigation indicator accordingly.
 				$('#ApplicationPage').on("scroll", function () {
-					console.log("Scrolling!");
+					// TODO: Update the indicator on the main-navigation bar
 				});
 			},
 
