@@ -3,11 +3,12 @@ define([
 	'underscore', 
 	'backbone',
 	'marionette',
+	'router',
 	'modules/mainNavigation',
 	'modules/about',
 	'modules/portfolio',
 	'modules/findMe'
-], function ($, _, Backbone, Marionette, MainNavigation, About, Portfolio, FindMe) {
+], function ($, _, Backbone, Marionette, Router, MainNavigation, About, Portfolio, FindMe) {
 
 	// Create the Marionette application object.
 	var App = new Marionette.Application();
@@ -27,10 +28,10 @@ define([
 		var page_height = $(window).height() - $('#ApplicationHeader').height();
 		$('#ApplicationPage').height(page_height);
 
-		// Start the backbone history module.
-		if (Backbone.history){
-			Backbone.history.start();
-		}
+		// TODO: Add a listener for re-size events, so we can recalculate the section sizes.
+
+		// Setup the router to control our application.
+		this.router = new Router();
 	});
 
 	// Add Modules.

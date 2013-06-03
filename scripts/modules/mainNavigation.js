@@ -12,8 +12,11 @@ define([
 		// Define a controller to run this module
 		// --------------------------------------
 		var Controller = Marionette.Controller.extend({
+
 			initialize: function (options) {
 				this.region = options.region
+
+				// TODO: Add a scroll listener to control which navigation link is marked .current.
 			},
 
 			show: function () {
