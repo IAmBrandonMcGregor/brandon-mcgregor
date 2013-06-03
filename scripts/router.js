@@ -24,10 +24,15 @@ define([
 			$('#ApplicationPage').animate({ scrollTop: 0 }, "slow");
 		},
 		portfolio : function () {
-			console.log("TODO: Navigate to the Portfolio section.");
+			this.scrollTo('#Portfolio');
 		},
 		findMe : function () {
-			console.log("TODO: Navigate to the Find-Me section.");
+			this.scrollTo('#FindMe');
+		},
+
+		scrollTo : function (selector) {
+			var yAmount = $(selector).offset().top + $('#ApplicationPage').scrollTop() - parseFloat($('#ApplicationPage').css('margin-top')) + 1;
+			$("#ApplicationPage").animate({ scrollTop : yAmount }, 'slow');
 		}
 	});
 

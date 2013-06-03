@@ -52,5 +52,6 @@ html body {
           text-decoration: none; }
 
 #ApplicationPage {
+  position: relative;
   margin-top: 2.6em;
   overflow: auto; }

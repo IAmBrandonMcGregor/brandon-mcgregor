@@ -70,6 +70,7 @@ html body {
 	}
 }
 #ApplicationPage {
+	position: relative;
 	margin-top: $header_height;
 	overflow: auto;
 }
