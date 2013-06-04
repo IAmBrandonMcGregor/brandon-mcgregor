@@ -46,7 +46,7 @@ html body {
         #ApplicationHeader nav ul li a:hover {
           color: inherit;
           border-bottom: 2px solid white; }
-        #ApplicationHeader nav ul li a.current, #ApplicationHeader nav ul li a:active, #ApplicationHeader nav ul li a:focus {
+        #ApplicationHeader nav ul li a.current {
           color: inherit;
           border-top: 2px solid white;
           text-decoration: none; }

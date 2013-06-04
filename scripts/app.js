@@ -16,9 +16,9 @@ define([
 	// Setup some regions within the application.
 	App.addRegions({
 		header : '#ApplicationHeader',
-		about : '#AboutMe',
-		portfolio : '#Portfolio',
-		findMe : '#FindMe'
+		about : '#P_About',
+		portfolio : '#P_Portfolio',
+		findMe : '#P_FindMe'
 	});
 
 	// Start the backbone history once the application has been started.
@@ -32,12 +32,13 @@ define([
 		$(window).on("resize", function () { self.resize(); });
 
 		// Setup the router to control our application.
-		this.router = new Router();
+		this.router = new Router({ vent: this.vent });
 	});
 
 	App.resize = function () {
 		var page_height = $(window).height() - $('#ApplicationHeader').height();
 		$('#ApplicationPage').height(page_height);
+		this.vent.trigger("App:Resize");
 	};
 
 	// Add Modules.

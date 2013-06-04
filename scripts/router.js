@@ -5,9 +5,17 @@ define([
 	'backbone',
 	'marionette'
 ], function ($, _, Backbone, Marionette) {
-	var Router = Backbone.Marionette.AppRouter.extend({
+	var Router = Backbone.Router.extend({
 
-		initialize : function () {
+		initialize : function (options) {
+			// Capture the current scope.
+			var self = this;
+
+			// Ensure we know where the different application sections are located.
+			this.captureLocals();
+			options.vent.on("App:Resize", function () { self.captureLocals(); });
+
+			// Start the backbone history module.
 			if (Backbone.history)
 				Backbone.history.start();
 		},
@@ -19,20 +27,19 @@ define([
 			'*path' : 'defaultRoute'
 		},
 		
-		defaultRoute : function () {
-			console.log("The default route has been hit.");
-			$('#ApplicationPage').animate({ scrollTop: 0 }, "slow");
-		},
-		portfolio : function () {
-			this.scrollTo('#Portfolio');
-		},
-		findMe : function () {
-			this.scrollTo('#FindMe');
-		},
+		defaultRoute : function () { this.scrollTo(this.locals.about); },
+		portfolio : function () { this.scrollTo(this.locals.portfolio); },
+		findMe : function () { this.scrollTo(this.locals.findMe); },
 
-		scrollTo : function (selector) {
-			var yAmount = $(selector).offset().top + $('#ApplicationPage').scrollTop() - parseFloat($('#ApplicationPage').css('margin-top')) + 1;
-			$("#ApplicationPage").animate({ scrollTop : yAmount }, 'slow');
+		captureLocals : function () {
+			this.locals = {
+				about : 0,
+				portfolio : ($('#P_Portfolio').offset().top + $('#ApplicationPage').scrollTop() - parseFloat($('#ApplicationPage').css('margin-top')) + 1),
+				findMe : ($('#P_FindMe').offset().top + $('#ApplicationPage').scrollTop() - parseFloat($('#ApplicationPage').css('margin-top')) + 1)
+			};
+		},
+		scrollTo : function (location) {
+			$("#ApplicationPage").animate({ scrollTop : location }, 'slow');
 		}
 	});
 

@@ -1,4 +1,4 @@
-#AboutMe {
+#P_About {
   background-color: rgba(0, 128, 0, 0.15);
   background-image: url("../../images/thegift.jpg");
   background-repeat: no-repeat;
@@ -7,5 +7,5 @@
   background-size: cover;
   color: white;
   text-transform: uppercase; }
-  #AboutMe h1 {
+  #P_About h1 {
     margin: 0.285em 0; }
